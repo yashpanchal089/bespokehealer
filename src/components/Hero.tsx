@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, Compass } from 'lucide-react';
 import srushtiClientPhoto from '../assets/dr-srushti-portrait.jpg';
 import { siteConfig } from '../data/config';
 import { SacredIconsStrip } from './SacredIconsStrip';
@@ -151,61 +151,120 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
               </div>
             </motion.div>
 
-            {/* Primary Headline Matching Reference Banner */}
+            {/* Magnetic Animated Headline */}
             <motion.div variants={itemFadeUp} className="space-y-1">
-              <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[4.75rem] font-normal leading-[1.06] text-[#20191E] tracking-tight">
-                You are the Secret.{' '}
-                <br className="hidden sm:inline" />
-                <span className="italic font-light text-[#8A679A]">
-                  Let Tarot explore you
-                </span>
+              <h1 className="font-editorial text-5xl sm:text-6xl md:text-7xl lg:text-[5.3rem] font-normal leading-[1.04] text-[#2B2329] tracking-tight">
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="inline-block hover:scale-105 transition-transform"
+                >
+                  Heal.
+                </motion.span>{' '}
+                
+                <span className="relative inline-block">
+                  <motion.span
+                    animate={{
+                      color: ['#8A679A', '#AC7EB8', '#7E5B8E', '#8A679A'],
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                    className="italic font-light inline-block"
+                  >
+                    Align.
+                  </motion.span>
+                  
+                  {/* Animated Wave Underline */}
+                  <motion.svg
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 1.2, delay: 0.6, ease: 'easeInOut' }}
+                    className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-3 text-[#E5A8CE]"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                  >
+                    <motion.path
+                      d="M0 8 Q 25 1 50 8 T 100 8"
+                      fill="transparent"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                  </motion.svg>
+                </span>{' '}
+
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.4 }}
+                  className="inline-block hover:scale-105 transition-transform"
+                >
+                  Transform.
+                </motion.span>
               </h1>
             </motion.div>
 
-            {/* Supporting Copy Matching Reference Banner */}
-            <motion.div variants={itemFadeUp} className="space-y-3 max-w-xl">
-              <p className="text-base sm:text-lg md:text-xl text-[#5F545D] font-light leading-relaxed">
-                Explore the many benefits of tarot card readings and how they can provide insight, energetic alignment, and clear direction for your life.
+            {/* Supporting Copy with Client Signature Motto */}
+            <motion.div variants={itemFadeUp} className="space-y-2.5">
+              <p className="font-editorial text-2xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide">
+                “You are the Secret. Let Tarot explore you.”
               </p>
-
-              <div className="text-sm sm:text-base text-[#7B6E77] font-medium tracking-wide flex items-center flex-wrap gap-2 pt-1">
-                <span>Intuitive Tarot</span>
+              <div className="text-base sm:text-lg text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2 pt-0.5">
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>
                 <span className="text-[#E5A8CE]">•</span>
-                <span>Energy Healing</span>
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Energy Healing</span>
                 <span className="text-[#E5A8CE]">•</span>
-                <span>Curated Crystals</span>
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Crystals</span>
               </div>
             </motion.div>
 
-            {/* Interactive CTA Buttons Matching Reference Banner */}
+            {/* Animated Interactive CTA Buttons */}
             <motion.div
               variants={itemFadeUp}
               className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2 w-full sm:w-auto"
             >
-              {/* Primary "Explore Services" Button Matching Client Reference Banner */}
+              {/* Primary "Explore Services" Pill Button with Floating Compass */}
               <motion.a
                 href="#services"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="relative group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold tracking-wider bg-[#1A1419] hover:bg-[#342431] text-white transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+                className="relative group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold tracking-wider bg-[#221B20] hover:bg-[#3D2C39] text-white transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
               >
-                <Sparkles className="w-4 h-4 text-[#E5A8CE] group-hover:rotate-12 transition-transform duration-300" />
+                {/* Subtle internal button sheen */}
+                <motion.div
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', repeatDelay: 3 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none"
+                />
+
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                >
+                  <Compass className="w-4 h-4 text-[#E7DCEF]" />
+                </motion.div>
                 <span>Explore Services</span>
                 <ArrowRight className="w-4 h-4 text-[#E5A8CE] group-hover:translate-x-1.5 transition-transform duration-300" />
               </motion.a>
 
-              {/* Secondary Booking Action */}
+              {/* Secondary Luxury "Book a Session" Button with Pulsing Sparkle */}
               <motion.button
                 onClick={onBookClick}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm font-semibold tracking-wide bg-white/80 hover:bg-white text-[#2B2329] border border-[#D380B8]/50 hover:border-[#D380B8] transition-all duration-300 shadow-xs hover:shadow-md"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm font-semibold tracking-wider uppercase bg-[#E5A8CE]/50 hover:bg-[#E5A8CE]/80 text-[#30232E] border border-[#D380B8]/40 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <span>Schedule Appointment</span>
+                <motion.div
+                  animate={{ rotate: [0, 15, -15, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <Sparkles className="w-4 h-4 text-[#8A679A] group-hover:scale-125 transition-transform" />
+                </motion.div>
+                <span>Book a Session</span>
               </motion.button>
             </motion.div>
 
-            {/* Trust Strip Metrics */}
+            {/* Trust Strip Metrics with Live Pulse */}
             <motion.div
               variants={itemFadeUp}
               className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-[#756B70]"
