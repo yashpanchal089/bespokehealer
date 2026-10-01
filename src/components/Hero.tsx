@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
     >
       {/* ================= CELESTIAL & TAROT WATERMARK BACKGROUND WITH ANIMATION ================= */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none opacity-30">
-        
+
         {/* Animated Meditative Rotating Sun Watermark */}
         <motion.div
           animate={{ rotate: 360 }}
@@ -122,7 +122,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       {/* ================= HERO MAIN CONTENT CONTAINER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          
+
           {/* ================= LEFT COLUMN: Headline & CTAs with Full Animations ================= */}
           <motion.div
             variants={containerVariants}
@@ -141,7 +141,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                   ✦
                 </motion.span>
                 <span>Bespoke Healer • Dr. Srushti Garg</span>
-                
+
                 {/* Shimmer reflection sweep */}
                 <motion.div
                   animate={{ x: ['-100%', '200%'] }}
@@ -162,7 +162,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 >
                   Heal.
                 </motion.span>{' '}
-                
+
                 <span className="relative inline-block">
                   <motion.span
                     animate={{
@@ -173,7 +173,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                   >
                     Align.
                   </motion.span>
-                  
+
                   {/* Animated Wave Underline */}
                   <motion.svg
                     initial={{ pathLength: 0, opacity: 0 }}
@@ -207,7 +207,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             {/* Supporting Copy with Client Signature Motto */}
             <motion.div variants={itemFadeUp} className="space-y-2.5">
               <p className="font-editorial text-2xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide">
-                “You are the Secret. Let Tarot explore you.”
+                “You hold the mystery. Let Tarot reveal it.”
               </p>
               <div className="text-base sm:text-lg text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2 pt-0.5">
                 <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>
@@ -285,7 +285,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
 
           {/* ================= RIGHT COLUMN: Serene Grounded Portrait of Dr. Srushti Garg ================= */}
           <div className="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
-            
+
             {/* Sacred Halo Rotating Geometry Rings (Preserved as requested: "behind circle is good. keep this") */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -302,7 +302,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
               transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
               className="absolute w-[310px] sm:w-[390px] h-[310px] sm:h-[390px] rounded-full border border-dashed border-[#D380B8]/35 pointer-events-none"
             />
-            
+
             {/* Radiant Breathing Rose-Lavender Aura */}
             <motion.div
               animate={{ scale: [1, 1.1, 1], opacity: [0.55, 0.8, 0.55] }}
