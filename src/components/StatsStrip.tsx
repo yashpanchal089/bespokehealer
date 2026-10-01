@@ -19,7 +19,7 @@ export const StatsStrip: React.FC = () => {
       sublabel: "Tarot • Healing • Crystals"
     },
     {
-      value: "15+",
+      value: "20+",
       label: "Crystal Varieties",
       sublabel: "Curated & Cleansed"
     }

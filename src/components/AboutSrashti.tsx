@@ -147,7 +147,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
                 }}
                 className="w-full py-3 rounded-full bg-mutedPurple text-white text-xs uppercase font-semibold tracking-wider hover:bg-[#9375a2] transition-colors"
               >
-                Schedule with Dr. Srushti
+                Schedule Appointment with Dr. Srushti Garg
               </button>
             </div>
           </div>

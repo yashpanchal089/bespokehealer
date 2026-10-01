@@ -49,7 +49,7 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
             <span>Personal Session Booking</span>
           </div>
           <h3 className="font-editorial text-3xl sm:text-4xl text-brandText font-normal">
-            Schedule with Dr. Srushti
+            Schedule Appointment with Dr. Srushti Garg
           </h3>
           <p className="text-xs text-brandLightText font-light">
             Dedicated 60-minute space for clarity, energy realignment & grounded truth.
