@@ -1,40 +1,49 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 export const CustomCursor: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(true);
-
-  // Exact mouse coordinate (zero lag)
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Only activate on pointer-fine desktop devices
-    const isPointerFine = window.matchMedia('(pointer: fine)').matches;
-    if (!isPointerFine) {
-      setIsTouchDevice(true);
+    if (!window.matchMedia('(pointer: fine)').matches) {
       return;
     }
-    setIsTouchDevice(false);
+
+    const cursor = cursorRef.current;
+    const inner = innerRef.current;
+    if (!cursor || !inner) return;
 
     // Hide default OS cursor on desktop
     document.documentElement.classList.add('custom-cursor-active');
 
+    let isVisible = false;
+    let isHovered = false;
+    let isClicked = false;
+
+    const updateInnerTransform = () => {
+      const scale = isClicked ? 0.85 : isHovered ? 1.2 : 1;
+      const rotate = isHovered ? -12 : -8;
+      inner.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+    };
+
+    // Instant zero-lag positioning on hardware compositor layer
     const handleMouseMove = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      if (!isVisible) {
+        isVisible = true;
+        cursor.style.opacity = '1';
+      }
+      cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
     };
 
     const handleMouseDown = () => {
-      setIsClicked(true);
+      isClicked = true;
+      updateInnerTransform();
     };
 
     const handleMouseUp = () => {
-      setIsClicked(false);
+      isClicked = false;
+      updateInnerTransform();
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -44,20 +53,26 @@ export const CustomCursor: React.FC = () => {
       const interactive = target.closest(
         'a, button, [role="button"], select, label, .cursor-pointer, [data-cursor-interactive], .glass-card-hover'
       );
-      setIsHovered(Boolean(interactive));
+      const shouldHover = Boolean(interactive);
+      if (isHovered !== shouldHover) {
+        isHovered = shouldHover;
+        updateInnerTransform();
+      }
     };
 
     const handleMouseLeave = () => {
-      setIsVisible(false);
+      isVisible = false;
+      cursor.style.opacity = '0';
     };
 
     const handleMouseEnter = () => {
-      setIsVisible(true);
+      isVisible = true;
+      cursor.style.opacity = '1';
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mousedown', handleMouseDown);
-    window.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousedown', handleMouseDown, { passive: true });
+    window.addEventListener('mouseup', handleMouseUp, { passive: true });
     window.addEventListener('mouseover', handleMouseOver, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseenter', handleMouseEnter);
@@ -71,30 +86,25 @@ export const CustomCursor: React.FC = () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [cursorX, cursorY, isVisible]);
-
-  if (isTouchDevice || !isVisible) return null;
+  }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[999999] overflow-hidden select-none">
-      {/* Pure Lotus Flower Cursor (No circle ring, no trails) */}
-      <motion.div
+    <div
+      ref={cursorRef}
+      className="pointer-events-none fixed top-0 left-0 z-[999999] select-none opacity-0 will-change-transform"
+      style={{
+        transform: 'translate3d(-100px, -100px, 0)',
+        transition: 'opacity 0.2s ease',
+      }}
+    >
+      <div
+        ref={innerRef}
+        className="pointer-events-none will-change-transform"
         style={{
-          x: cursorX,
-          y: cursorY,
-          // Position apex tip of center petal at the mouse point with natural 15-degree pointer tilt
-          translateX: '-35%',
-          translateY: '-10%',
+          transform: 'scale(1) rotate(-8deg)',
+          transformOrigin: '28% 12%', // Anchors the tip of the lotus precisely to the cursor point
+          transition: 'transform 0.16s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
-        animate={{
-          scale: isClicked ? 0.88 : isHovered ? 1.15 : 1,
-          rotate: isHovered ? -12 : -8,
-        }}
-        transition={{
-          duration: 0.15,
-          ease: 'easeOut',
-        }}
-        className="fixed top-0 left-0 pointer-events-none"
       >
         <svg
           width="32"
@@ -102,7 +112,10 @@ export const CustomCursor: React.FC = () => {
           viewBox="0 0 110 70"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="filter drop-shadow-[0_2px_5px_rgba(64,56,63,0.25)]"
+          style={{
+            filter: 'drop-shadow(0 2px 4px rgba(64,56,63,0.22))',
+            transform: 'translate(-28%, -12%)',
+          }}
         >
           {/* Central Petal */}
           <path
@@ -126,7 +139,7 @@ export const CustomCursor: React.FC = () => {
             strokeWidth="1.5"
           />
         </svg>
-      </motion.div>
+      </div>
     </div>
   );
 };
