@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import energyHealerHand from '../assets/energy-healer-hand.png';
+import energyHealerHandHover from '../assets/energy-healer-hand-hover.png';
 
 export const SacredIconsStrip: React.FC = () => {
   const sacredSymbols = [
@@ -54,42 +56,20 @@ export const SacredIconsStrip: React.FC = () => {
     },
     {
       title: "Energy Healer",
-      subtitle: "Reiki & Energy Healing",
+      subtitle: "Pranic & Chakra Healing",
       icon: (
-        <svg viewBox="0 0 100 100" className="w-16 h-16 sm:w-20 sm:h-20 text-[#40383F] group-hover:text-[#D380B8] transition-colors" fill="none" stroke="currentColor" strokeWidth="1.2">
-          {/* Pulsing Aura Radiance Rings */}
-          <circle cx="50" cy="38" r="18" strokeDasharray="2 3" opacity="0.4" />
-          <circle cx="50" cy="38" r="12" strokeWidth="0.9" opacity="0.6" strokeDasharray="3 2" />
-
-          {/* Radiant Prana Core */}
-          <circle cx="50" cy="38" r="6" strokeWidth="1.3" fill="currentColor" fillOpacity="0.12" />
-          <circle cx="50" cy="38" r="2.5" fill="currentColor" />
-
-          {/* Ascending Energy Rays / Light Beams */}
-          <path d="M50 20 L50 24 M50 52 L50 56 M34 38 L38 38 M62 38 L66 38 M39 27 L42 30 M58 46 L61 49 M39 49 L42 46 M58 27 L61 30" strokeLinecap="round" strokeWidth="1.1" />
-
-          {/* Sacred Cupped Healing Hands */}
-          <path
-            d="M20 70 C24 63, 33 59, 42 63 C46 65, 49 70, 50 76 C51 70, 54 65, 58 63 C67 59, 76 63, 80 70 C75 78, 65 86, 50 87 C35 86, 25 78, 20 70 Z"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+          <img
+            src={energyHealerHand}
+            alt="Energy Healer Pranic & Chakra Healing"
+            className="w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0 select-none"
           />
-          {/* Palm Lines & Energy Flow */}
-          <path d="M30 70 C35 66, 41 66, 46 70" strokeLinecap="round" opacity="0.5" />
-          <path d="M70 70 C65 66, 59 66, 54 70" strokeLinecap="round" opacity="0.5" />
-
-          {/* Flowing Prana Swirls */}
-          <path d="M47 50 C48 45, 52 45, 53 50" strokeLinecap="round" opacity="0.6" />
-          <path d="M45 54 C47 48, 53 48, 55 54" strokeLinecap="round" opacity="0.4" />
-
-          {/* Divine Starlight Sparks */}
-          <path d="M50 8 L51 11 L54 12 L51 13 L50 16 L49 13 L46 12 L49 11 Z" fill="currentColor" />
-          <circle cx="26" cy="46" r="1.3" fill="currentColor" />
-          <circle cx="74" cy="46" r="1.3" fill="currentColor" />
-          <circle cx="34" cy="20" r="1" fill="currentColor" opacity="0.7" />
-          <circle cx="66" cy="20" r="1" fill="currentColor" opacity="0.7" />
-        </svg>
+          <img
+            src={energyHealerHandHover}
+            alt="Energy Healer Pranic & Chakra Healing"
+            className="w-full h-full object-contain absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 select-none"
+          />
+        </div>
       )
     },
     {
