@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion, useMotionValue, useSpring, useTransform, type Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Sparkles, ArrowRight, Compass } from 'lucide-react';
-import srushtiClientPhoto from '../assets/srushti-client.jpg';
+import srushtiClientPhoto from '../assets/dr-srushti-portrait.jpg';
 import { siteConfig } from '../data/config';
 import { SacredIconsStrip } from './SacredIconsStrip';
 
@@ -10,33 +10,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
-  // Smooth spring-based mouse tilt interaction for the photo
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 25, stiffness: 120 };
-  const smoothX = useSpring(mouseX, springConfig);
-  const smoothY = useSpring(mouseY, springConfig);
-
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], [7, -7]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-7, 7]);
-  const moveX = useTransform(smoothX, [-0.5, 0.5], [-12, 12]);
-  const moveY = useTransform(smoothY, [-0.5, 0.5], [-12, 12]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { width, height, left, top } = currentTarget.getBoundingClientRect();
-    const x = (clientX - left) / width - 0.5;
-    const y = (clientY - top) / height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
   // Stagger animation container variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -50,19 +23,17 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
   };
 
   const itemFadeUp: Variants = {
-    hidden: { opacity: 0, y: 28 },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.85, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
 
   return (
     <section
       id="hero"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
       className="relative pt-28 sm:pt-32 lg:pt-36 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FAF6F0] to-[#FFFFFF] bg-grain"
     >
       {/* ================= CELESTIAL & TAROT WATERMARK BACKGROUND WITH ANIMATION ================= */}
@@ -233,29 +204,19 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
               </h1>
             </motion.div>
 
-            {/* Supporting Copy with Staggered Modalities */}
-            <motion.p
-              variants={itemFadeUp}
-              className="text-lg sm:text-xl md:text-2xl text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2"
-            >
-              <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>
-              <motion.span
-                animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="text-[#E5A8CE]"
-              >
-                •
-              </motion.span>
-              <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Energy Healing</span>
-              <motion.span
-                animate={{ scale: [1, 1.4, 1], opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-                className="text-[#E5A8CE]"
-              >
-                •
-              </motion.span>
-              <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Crystals</span>
-            </motion.p>
+            {/* Supporting Copy with Client Signature Motto */}
+            <motion.div variants={itemFadeUp} className="space-y-2.5">
+              <p className="font-editorial text-2xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide">
+                “You are the Secret. Let Tarot explore you.”
+              </p>
+              <div className="text-base sm:text-lg text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2 pt-0.5">
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>
+                <span className="text-[#E5A8CE]">•</span>
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Energy Healing</span>
+                <span className="text-[#E5A8CE]">•</span>
+                <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Crystals</span>
+              </div>
+            </motion.div>
 
             {/* Animated Interactive CTA Buttons */}
             <motion.div
@@ -322,10 +283,10 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             </motion.div>
           </motion.div>
 
-          {/* ================= RIGHT COLUMN: Fully Animated Srushti Garg Photo Card ================= */}
+          {/* ================= RIGHT COLUMN: Serene Grounded Portrait of Dr. Srushti Garg ================= */}
           <div className="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
             
-            {/* Sacred Halo Rotating Geometry Rings */}
+            {/* Sacred Halo Rotating Geometry Rings (Preserved as requested: "behind circle is good. keep this") */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
@@ -344,80 +305,48 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             
             {/* Radiant Breathing Rose-Lavender Aura */}
             <motion.div
-              animate={{ scale: [1, 1.15, 1], opacity: [0.55, 0.85, 0.55] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.55, 0.8, 0.55] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute -inset-6 rounded-full bg-gradient-to-tr from-[#E7DCEF]/85 via-[#F5C6D6]/45 to-transparent filter blur-3xl -z-10"
             />
 
-            {/* ================= 3D KINETIC FLOATING PORTRAIT ARCH ================= */}
-            <motion.div
-              style={{
-                rotateX,
-                rotateY,
-                x: moveX,
-                y: moveY,
-                transformPerspective: 1000,
-              }}
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                y: { duration: 5.5, repeat: Infinity, ease: 'easeInOut' },
-              }}
-              className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[4/5] rounded-[2.8rem] overflow-hidden shadow-2xl border-2 border-[#E5A8CE]/65 bg-[#FBF8F3] group cursor-pointer"
+            {/* ================= CALM, GROUNDED LUXURY PORTRAIT (ZERO SHAKING / ZERO EARTHQUAKE) ================= */}
+            <div
+              className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[4/5] rounded-[2.8rem] overflow-hidden shadow-2xl border-2 border-[#E5A8CE]/65 bg-[#FBF8F3] group transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(211,128,184,0.35)]"
             >
-              {/* Srushti Garg Real Client Photo with Smooth Hover Zoom */}
-              <motion.img
+              {/* Dr. Srushti Garg Real Authentic Portrait with Gentle Calm Hover */}
+              <img
                 src={srushtiClientPhoto}
                 alt="Dr. Srushti Garg — Bespoke Healer Founder & Spiritual Guide"
-                className="w-full h-full object-cover object-top filter contrast-[1.03] brightness-[1.01] transition-transform duration-700 ease-out group-hover:scale-106"
-              />
-
-              {/* Dynamic Studio Sheen Gliding Across Portrait Periodically */}
-              <motion.div
-                animate={{ x: ['-180%', '280%'] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 4 }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 pointer-events-none z-10"
+                className="w-full h-full object-cover object-top filter contrast-[1.02] brightness-[1.01] transition-transform duration-700 ease-out group-hover:scale-104 select-none"
               />
 
               {/* Gentle Feathered Gradient Overlay to blend harmoniously */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#2F212B]/75 via-transparent to-transparent opacity-80 pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-b from-[#F5EFE6]/15 via-transparent to-transparent pointer-events-none" />
 
-              {/* Animated Bottom Glass Card Overlay with Founder Credentials */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                whileHover={{ y: -2 }}
-                className="absolute bottom-4 left-4 right-4 glass-card px-4 py-3 rounded-2xl border border-white/70 shadow-lg flex items-center justify-between z-20 backdrop-blur-md"
+              {/* Serene Glass Card with Founder Credentials */}
+              <div
+                className="absolute bottom-4 left-4 right-4 glass-card px-4 py-3 rounded-2xl border border-white/70 shadow-lg flex items-center justify-between z-20 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1"
               >
                 <div>
                   <p className="font-editorial text-lg sm:text-xl text-[#2B2329] font-semibold leading-tight flex items-center gap-1.5">
                     {siteConfig.founderName}
-                    <motion.span
-                      animate={{ scale: [1, 1.3, 1] }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                      className="text-[#D380B8] text-xs inline-block"
-                    >
-                      ✦
-                    </motion.span>
+                    <span className="text-[#D380B8] text-xs inline-block">✦</span>
                   </p>
                   <p className="text-xs text-[#D380B8] font-medium tracking-wide mt-0.5">
                     Tarot Card Reader • Energy Healer • Crystals
                   </p>
                 </div>
 
-                <motion.div
-                  animate={{ rotate: [0, 90, 180, 270, 360] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                <div
                   className="w-9 h-9 rounded-full bg-[#F8EBF4] flex items-center justify-center text-[#D380B8] shadow-inner font-serif"
                 >
                   ✦
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
 
-            </motion.div>
+            </div>
 
           </div>
 
