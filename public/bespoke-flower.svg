@@ -1,0 +1,8 @@
+<svg viewBox="0 0 110 70" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central Petal -->
+  <path d="M55 2 C68 22 72 46 55 68 C38 46 42 22 55 2 Z" />
+  <!-- Left Petal -->
+  <path d="M3 27 C20 22 41 38 42 68 C24 58 13 42 3 27 Z" />
+  <!-- Right Petal -->
+  <path d="M107 27 C90 22 69 38 68 68 C86 58 97 42 107 27 Z" />
+</svg>
