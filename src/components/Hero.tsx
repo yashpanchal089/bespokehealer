@@ -325,6 +325,18 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2F212B]/75 via-transparent to-transparent opacity-80 pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-b from-[#F5EFE6]/15 via-transparent to-transparent pointer-events-none" />
 
+              {/* Dynamic Studio Sheen Gliding Across Portrait Every 2.5-3 Seconds */}
+              <motion.div
+                animate={{ x: ['-180%', '280%'] }}
+                transition={{
+                  duration: 2.4,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  repeatDelay: 2.5,
+                }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none z-10"
+              />
+
               {/* Serene Glass Card with Founder Credentials */}
               <div
                 className="absolute bottom-4 left-4 right-4 glass-card px-4 py-3 rounded-2xl border border-white/70 shadow-lg flex items-center justify-between z-20 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1"
