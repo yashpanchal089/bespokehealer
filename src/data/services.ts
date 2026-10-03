@@ -1,3 +1,5 @@
+import tarotCardReadingImg from '../assets/tarot-card-reading-wide.jpg';
+
 export interface Service {
   id: string;
   name: string;
@@ -17,7 +19,7 @@ export const servicesData: Service[] = [
     id: "tarot-reading",
     name: "Tarot Card Reading",
     slug: "tarot-card-reading",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    image: tarotCardReadingImg,
     shortDescription: "Clarity when you need it most.",
     description: "An intuitive 1-on-1 dialogue with the archetypes. We illuminate your current crossroads, reveal hidden emotional patterns, and find grounded spiritual clarity for love, career, and personal transition.",
     duration: "60 Minutes",

@@ -207,7 +207,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             {/* Supporting Copy with Client Signature Motto */}
             <motion.div variants={itemFadeUp} className="space-y-2.5">
               <p className="font-editorial text-2xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide">
-                “You hold the mystery. Let Tarot reveal it.”
+                "What happens to your energy body <br /> tends to manifest physically."
               </p>
               <div className="text-base sm:text-lg text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2 pt-0.5">
                 <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>

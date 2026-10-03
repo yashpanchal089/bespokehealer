@@ -58,10 +58,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
               <img
                 src={featuredService.image}
                 alt={featuredService.name}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               {/* Luxury gradient overlay: ensures high contrast and readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-warmBeige via-warmBeige/60 to-transparent group-hover:via-warmBeige/40 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-warmBeige via-warmBeige/50 to-transparent group-hover:via-warmBeige/35 transition-all duration-500" />
               {/* Soft lavender glow appearing on hover */}
               <div className="absolute inset-0 bg-gradient-to-tr from-lightLavender/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
@@ -172,7 +172,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
               <img
                 src={selectedService.image}
                 alt={selectedService.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_30%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-softCream via-transparent to-black/20" />
               <button

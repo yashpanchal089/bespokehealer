@@ -38,7 +38,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
               {/* Subtle quote overlay */}
               <div className="absolute bottom-5 left-5 right-5 glass-card p-4 rounded-2xl border border-white/70">
                 <p className="font-editorial italic text-sm text-brandText leading-snug">
-                  "Healing is not about becoming someone new. It is peeling away the noise to remember who you already are."
+                  "Let go. Learn to forgive & forget. Let go & go on living"
                 </p>
               </div>
             </div>

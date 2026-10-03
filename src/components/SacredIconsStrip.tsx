@@ -7,7 +7,7 @@ export const SacredIconsStrip: React.FC = () => {
   const sacredSymbols = [
     {
       title: "Tarot Card Reader",
-      subtitle: "Tarot & Intuitive Wisdom",
+      subtitle: "Guidance & clarity",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 sm:w-20 sm:h-20 text-[#40383F] group-hover:text-[#D380B8] transition-colors" fill="none" stroke="currentColor" strokeWidth="1.2">
           {/* Left Tilted Tarot Card */}
@@ -74,7 +74,7 @@ export const SacredIconsStrip: React.FC = () => {
     },
     {
       title: "Crystals",
-      subtitle: "Sacred Stones & Vibrations",
+      subtitle: "Healing & manifestation",
       icon: (
         <svg viewBox="0 0 100 100" className="w-16 h-16 sm:w-20 sm:h-20 text-[#40383F] group-hover:text-[#D380B8] transition-colors" fill="none" stroke="currentColor" strokeWidth="1.2">
           {/* Sacred Base Pedestal / Radiant Foundation */}
