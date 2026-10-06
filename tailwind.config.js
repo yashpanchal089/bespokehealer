@@ -21,6 +21,7 @@ export default {
       fontFamily: {
         serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
         sans: ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        script: ['"Alex Brush"', 'cursive', '"Playfair Display"', 'serif'],
       },
       keyframes: {
         float: {

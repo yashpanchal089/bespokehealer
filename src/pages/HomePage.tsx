@@ -8,9 +8,8 @@ import { PricingSection } from '../components/PricingSection';
 import { ShopSection } from '../components/ShopSection';
 import { VisualBreak } from '../components/VisualBreak';
 import { TestimonialsSection } from '../components/TestimonialsSection';
-import { InstagramSection } from '../components/InstagramSection';
 import { FAQSection } from '../components/FAQSection';
-import { FinalCTA } from '../components/FinalCTA';
+import { InstagramBanner } from '../components/InstagramBanner';
 
 interface HomePageProps {
   onBookClick: () => void;
@@ -28,9 +27,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onBookClick }) => {
       <ShopSection isFullCatalogPage={false} />
       <VisualBreak />
       <TestimonialsSection />
-      <InstagramSection />
       <FAQSection />
-      <FinalCTA onBookClick={onBookClick} />
+      <InstagramBanner />
     </main>
   );
 };

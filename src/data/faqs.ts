@@ -40,5 +40,15 @@ export const faqsData: FAQItem[] = [
     id: "faq-7",
     question: "Do you provide personal guidance for crystals and space cleansing?",
     answer: "Yes. Dr. Srushti provides custom energetic space assessments using specific healing crystals, sacred wall hangings, and sound/smoke cleansing protocols to uplift living and work spaces."
+  },
+  {
+    id: "faq-8",
+    question: "What is your refund and replacement policy for products?",
+    answer: "To claim a refund or replacement for any ordered product (crystals, bath salts, sacred items), a proper, uncut unboxing video recorded while opening the parcel is strictly required. This helps us verify any transit damage or discrepancies and resolve your request swiftly."
+  },
+  {
+    id: "faq-9",
+    question: "Can I reschedule my Tarot or Energy Healing session?",
+    answer: "Yes, one single-time rescheduling is allowed for booked Tarot or Energy Healing sessions. Please inform us via WhatsApp at least 24 hours prior to your scheduled slot so we can reallocate your consultation to the next available opening."
   }
 ];
