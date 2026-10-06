@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, Clock, X, MessageCircle } from 'lucide-react';
+import { Sparkles, Clock, X, MessageCircle } from 'lucide-react';
 import { servicesData } from '../data/services';
 import type { Service } from '../data/services';
 import { getServiceWhatsAppUrl } from '../data/config';
@@ -11,10 +11,6 @@ interface ServicesSectionProps {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick }) => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
-
-  // 01 Tarot Card Reading is the featured/visually prominent card
-  const featuredService = servicesData[0];
-  const secondaryServices = servicesData.slice(1);
 
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-softCream/40">
@@ -41,125 +37,77 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
           </p>
         </div>
 
-        {/* Asymmetrical Editorial Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
-          {/* 01 — TAROT CARD READING (Visually Prominent, 7 Columns) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            onClick={() => setSelectedService(featuredService)}
-            className="lg:col-span-7 group cursor-pointer relative rounded-3xl overflow-hidden shadow-lg border border-secondaryPurple/40 bg-softCream flex flex-col justify-between min-h-[480px] lg:min-h-[560px] glass-card-hover"
-          >
-            {/* Background Image with Zoom on hover */}
-            <div className="absolute inset-0 overflow-hidden">
-              <img
-                src={featuredService.image}
-                alt={featuredService.name}
-                className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              {/* Luxury gradient overlay: ensures high contrast and readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-warmBeige via-warmBeige/50 to-transparent group-hover:via-warmBeige/35 transition-all duration-500" />
-              {/* Soft lavender glow appearing on hover */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-lightLavender/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-
-            {/* Top Bar with Number & Badge */}
-            <div className="relative z-10 p-6 sm:p-8 flex items-center justify-between">
-              <span className="font-editorial text-3xl font-light text-brandText/70 tracking-widest">
-                01
-              </span>
-              <span className="px-3.5 py-1 rounded-full bg-warmBeige/90 backdrop-blur-md border border-secondaryPurple/40 text-[11px] font-semibold uppercase tracking-widest text-brandText shadow-sm">
-                {featuredService.editorialHighlight}
-              </span>
-            </div>
-
-            {/* Bottom Content with Heading, Short line, and Animated CTA */}
-            <div className="relative z-10 p-6 sm:p-8 space-y-3">
-              <h3 className="font-editorial text-3xl sm:text-4xl text-brandText font-normal group-hover:translate-x-1.5 transition-transform duration-300">
-                {featuredService.name}
-              </h3>
-              
-              <p className="text-base sm:text-lg text-brandLightText font-light">
-                {featuredService.shortDescription}
-              </p>
-
-              <div className="pt-3 flex items-center justify-between">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-mutedPurple group-hover:text-brandText transition-colors">
-                  <span>Explore Experience</span>
-                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                </span>
-
-                <span className="text-xs font-medium text-brandLightText tracking-wide bg-softCream/80 px-3 py-1 rounded-full border border-secondaryPurple/30">
-                  {featuredService.duration} • {featuredService.price}
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* 02 & 03 — Stacked Editorial Columns (5 Columns) */}
-          <div className="lg:col-span-5 flex flex-col gap-8 justify-between">
-            {secondaryServices.map((service, index) => {
-              const numberStr = index === 0 ? "02" : "03";
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: (index + 1) * 0.15 }}
+        {/* 3 Equal Big Rectangle Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-stretch">
+          {servicesData.map((service, index) => {
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: index * 0.15 }}
+                className="group relative rounded-3xl overflow-hidden shadow-xl border border-secondaryPurple/30 bg-softCream flex flex-col justify-between h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+              >
+                {/* Full, Crisp Image without white effect */}
+                <div 
                   onClick={() => setSelectedService(service)}
-                  className="group cursor-pointer relative rounded-3xl overflow-hidden shadow-lg border border-secondaryPurple/40 bg-softCream flex-1 min-h-[260px] flex flex-col justify-between glass-card-hover"
+                  className="relative h-80 sm:h-96 lg:h-[460px] w-full overflow-hidden cursor-pointer bg-warmBeige/20"
                 >
-                  {/* Background Image with Zoom */}
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-warmBeige via-warmBeige/65 to-transparent group-hover:via-warmBeige/50 transition-all duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-lightLavender/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
+                  <img
+                    src={service.image}
+                    alt={service.name}
+                    className={`w-full h-full ${
+                      index === 0 ? 'object-cover object-center' : 'object-cover object-center'
+                    } group-hover:scale-105 transition-transform duration-700 ease-out`}
+                  />
+                </div>
 
-                  {/* Top Bar with Number */}
-                  <div className="relative z-10 p-5 sm:p-6 flex items-center justify-between">
-                    <span className="font-editorial text-2xl font-light text-brandText/70 tracking-widest">
-                      {numberStr}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-warmBeige/90 backdrop-blur-md border border-secondaryPurple/30 text-[10px] font-semibold uppercase tracking-wider text-brandText">
-                      {service.editorialHighlight}
-                    </span>
-                  </div>
+                {/* Card Body — Compact White Part */}
+                <div className="p-4 sm:p-5 flex flex-col items-center justify-between space-y-3 bg-softCream">
+                  {/* Service Title */}
+                  <h3 
+                    onClick={() => setSelectedService(service)}
+                    className="font-editorial text-2xl sm:text-3xl text-brandText font-normal leading-snug text-center cursor-pointer group-hover:text-mutedPurple transition-colors"
+                  >
+                    {service.name}
+                  </h3>
 
-                  {/* Bottom Content */}
-                  <div className="relative z-10 p-5 sm:p-6 space-y-2">
-                    <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal group-hover:translate-x-1.5 transition-transform duration-300">
-                      {service.name}
-                    </h3>
-                    
-                    <p className="text-sm text-brandLightText font-light line-clamp-2">
-                      {service.shortDescription}
-                    </p>
-
-                    <div className="pt-2 flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-mutedPurple group-hover:text-brandText transition-colors">
-                        <span>Explore</span>
-                        <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {/* Pricing, Book Now & Session Details */}
+                  <div className="w-full flex flex-col items-center space-y-2.5">
+                    {/* Price & Duration - Big Size */}
+                    <div className="text-center flex items-baseline justify-center gap-1.5 flex-wrap">
+                      <span className="font-editorial text-2xl sm:text-3xl lg:text-4xl text-brandText font-semibold tracking-tight">
+                        {service.price}
                       </span>
-
-                      <span className="text-[11px] font-medium text-brandLightText">
-                        {service.duration}
+                      <span className="font-editorial text-sm sm:text-base text-mutedPurple font-normal">
+                        {service.price === 'Custom' 
+                          ? 'for Personalised' 
+                          : `for ${service.duration}`}
                       </span>
                     </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
 
+                    {/* Book Now Button */}
+                    <button
+                      onClick={() => onBookClick()}
+                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-brandText hover:bg-mutedPurple text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-w-[180px]"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-secondaryPurple" />
+                      <span>Book Now</span>
+                    </button>
+
+                    {/* View full session details - Bigger Size */}
+                    <button
+                      onClick={() => setSelectedService(service)}
+                      className="text-sm sm:text-base font-semibold tracking-wide text-mutedPurple hover:text-brandText transition-colors underline underline-offset-4 pt-0.5"
+                    >
+                      View full session details
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

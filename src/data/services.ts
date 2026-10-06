@@ -1,4 +1,4 @@
-import tarotCardReadingImg from '../assets/tarot-card-reading-wide.jpg';
+import tarotCardReadingImg from '../assets/tarot-reading-full.jpg';
 
 export interface Service {
   id: string;
@@ -12,6 +12,7 @@ export interface Service {
   featured: boolean;
   editorialHighlight?: string;
   whatsappMessage?: string;
+  features?: string[];
 }
 
 export const servicesData: Service[] = [
@@ -26,7 +27,12 @@ export const servicesData: Service[] = [
     price: "₹2,000",
     featured: true,
     editorialHighlight: "Signature Guidance",
-    whatsappMessage: "Hi Dr. Srushti 👋 I would like to book a 60-Minute Tarot Card Reading session. Please share available slots."
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to book a 60-Minute Tarot Card Reading session. Please share available slots.",
+    features: [
+      "1-on-1 intuitive dialogue with Tarot archetypes",
+      "Grounded clarity for love, career & pivotal crossroads",
+      "Uncover emotional patterns & receive future direction"
+    ]
   },
   {
     id: "energy-healing",
@@ -39,7 +45,12 @@ export const servicesData: Service[] = [
     price: "₹2,000",
     featured: false,
     editorialHighlight: "Deep Restoration",
-    whatsappMessage: "Hi Dr. Srushti 👋 I am interested in an Energy Healing session. Please let me know your consultation schedule."
+    whatsappMessage: "Hi Dr. Srushti 👋 I am interested in an Energy Healing session. Please let me know your consultation schedule.",
+    features: [
+      "Gentle vibrational bio-field restoration & balance",
+      "Chakra clearing, sacred breath & energetic cord-cutting",
+      "Dissolve lingering heaviness & restore inner harmony"
+    ]
   },
   {
     id: "crystals-guidance",
@@ -52,6 +63,11 @@ export const servicesData: Service[] = [
     price: "Custom",
     featured: false,
     editorialHighlight: "Sacred Crystals",
-    whatsappMessage: "Hi Dr. Srushti 👋 I would like a personalized Crystal consultation to discover the right healing gemstones for my journey."
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like a personalized Crystal consultation to discover the right healing gemstones for my journey.",
+    features: [
+      "Personalized crystal pairing for your unique frequency & aura",
+      "Authentic, handpicked gemstones energetically cleansed",
+      "Dissolve blockages and ground peace, wealth & intention"
+    ]
   }
 ];

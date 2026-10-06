@@ -110,7 +110,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
       {/* Modal: Extended Journey of Dr. Srushti Garg */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brandText/40 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-lg bg-softCream rounded-3xl p-6 sm:p-8 border border-secondaryPurple/40 shadow-2xl space-y-6">
+          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-softCream rounded-3xl p-6 sm:p-8 border border-secondaryPurple/40 shadow-2xl space-y-5">
             <button
               onClick={() => setModalOpen(false)}
               className="absolute top-5 right-5 p-2 rounded-full hover:bg-lightLavender transition-colors text-brandText"
@@ -119,27 +119,28 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="space-y-2">
+            <div className="space-y-1.5 pr-8">
               <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-mutedPurple">
-                ✦ Sacred Heritage
+                ✦ Sacred Heritage & Journey
               </span>
               <h3 className="font-editorial text-3xl text-brandText font-normal">
                 Dr. Srushti's Path & Philosophy
               </h3>
             </div>
 
-            <p className="text-sm text-brandLightText leading-relaxed">
-              With over 18 years dedicated to esoteric wisdom, intuitive tarot readings, and bio-energy harmonizing, Dr. Srushti Garg guides seekers through pivotal moments of decision, heartbreak, and spiritual rebirth.
-            </p>
-
-            <div className="space-y-2 pt-2">
-              <div className="p-3.5 rounded-2xl bg-warmBeige/80 border border-secondaryPurple/20 text-xs text-brandText">
-                <strong className="block text-brandText font-medium mb-1">Pure Transparency:</strong>
-                "No fear-mongering, no obscure predictions. Just grounded, compassionate truth that empowers you to move forward with peace."
-              </div>
+            <div className="space-y-3.5 text-sm text-brandLightText leading-relaxed">
+              <p>
+                Dr. Srushti Garg is a practicing dentist and holistic wellness practitioner with over 18 years of experience in the world of Healing &amp; Tarot. Her journey began in conventional healthcare, with dentistry at its core.
+              </p>
+              <p>
+                She believes that healing is not one-size-fits-all. Every individual carries a unique story, emotional pattern and energy—and sometimes, we simply need the right guidance to understand ourselves better and move forward with greater clarity.
+              </p>
+              <p>
+                Through Bespoke Healer, her intention is to create a safe and compassionate space where people can pause, reconnect, release and realign—whether they are seeking clarity, emotional healing, energetic balance or simply a deeper connection with themselves.
+              </p>
             </div>
 
-            <div className="flex justify-end gap-3 pt-3">
+            <div className="flex justify-end gap-3 pt-2">
               <button
                 onClick={() => {
                   setModalOpen(false);
