@@ -50,5 +50,10 @@ export const faqsData: FAQItem[] = [
     id: "faq-9",
     question: "Can I reschedule my Tarot or Energy Healing session?",
     answer: "Yes, one single-time rescheduling is allowed for booked Tarot or Energy Healing sessions. Please inform us via WhatsApp at least 24 hours prior to your scheduled slot so we can reallocate your consultation to the next available opening."
+  },
+  {
+    id: "faq-10",
+    question: "How should I prepare before attending a session?",
+    answer: "Find a quiet, comfortable space where you won't be interrupted. Have a glass of water nearby and take a few conscious deep breaths to center yourself. Keeping an open mind and clarity on the life areas you wish to explore helps you receive the deepest intuitive guidance."
   }
 ];
