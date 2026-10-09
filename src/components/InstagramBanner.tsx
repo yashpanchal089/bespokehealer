@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/config';
-import { InstagramIcon } from './SocialIcons';
 import instagramBannerImg from '../assets/instagram-connect-banner.png';
 
 export const InstagramBanner: React.FC = () => {
