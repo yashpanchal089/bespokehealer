@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Clock, X, MessageCircle } from 'lucide-react';
+import { Sparkles, Clock, X, MessageCircle, ArrowRight } from 'lucide-react';
 import { servicesData } from '../data/services';
 import type { Service } from '../data/services';
 import { getServiceWhatsAppUrl } from '../data/config';
@@ -74,22 +74,24 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                   </h3>
 
                   {/* Book Now & Session Details */}
-                  <div className="w-full flex flex-col items-center space-y-3 pt-1">
+                  <div className="w-full flex flex-col items-center gap-3 pt-1">
                     {/* Book Now Button */}
                     <button
                       onClick={() => onBookClick()}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-brandText hover:bg-mutedPurple text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-w-[180px]"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-2.5 rounded-full bg-brandText hover:bg-mutedPurple text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto min-w-[190px]"
                     >
                       <Sparkles className="w-3.5 h-3.5 text-secondaryPurple" />
                       <span>Book Now</span>
                     </button>
 
-                    {/* View full session details */}
+                    {/* View Session Details — Highlighted */}
                     <button
                       onClick={() => setSelectedService(service)}
-                      className="text-sm sm:text-base font-semibold tracking-wide text-mutedPurple hover:text-brandText transition-colors underline underline-offset-4 pt-0.5"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-lightLavender border border-secondaryPurple/60 hover:border-mutedPurple text-xs sm:text-sm font-semibold tracking-wide text-brandText hover:text-mutedPurple transition-all duration-300 shadow-sm hover:shadow hover:scale-[1.02] group"
                     >
-                      View full session details
+                      <span className="text-mutedPurple">✦</span>
+                      <span>View Session Details</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-mutedPurple group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
