@@ -64,7 +64,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                 </div>
 
                 {/* Card Body — Compact White Part */}
-                <div className="p-4 sm:p-5 flex flex-col items-center justify-between space-y-3 bg-softCream">
+                <div className="p-5 sm:p-6 flex flex-col items-center justify-between space-y-4 bg-softCream">
                   {/* Service Title */}
                   <h3 
                     onClick={() => setSelectedService(service)}
@@ -73,20 +73,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                     {service.name}
                   </h3>
 
-                  {/* Pricing, Book Now & Session Details */}
-                  <div className="w-full flex flex-col items-center space-y-2.5">
-                    {/* Price & Duration - Big Size */}
-                    <div className="text-center flex items-baseline justify-center gap-1.5 flex-wrap">
-                      <span className="font-editorial text-2xl sm:text-3xl lg:text-4xl text-brandText font-semibold tracking-tight">
-                        {service.price}
-                      </span>
-                      <span className="font-editorial text-sm sm:text-base text-mutedPurple font-normal">
-                        {service.price === 'Custom' 
-                          ? 'for Personalised' 
-                          : `for ${service.duration}`}
-                      </span>
-                    </div>
-
+                  {/* Book Now & Session Details */}
+                  <div className="w-full flex flex-col items-center space-y-3 pt-1">
                     {/* Book Now Button */}
                     <button
                       onClick={() => onBookClick()}
@@ -96,7 +84,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                       <span>Book Now</span>
                     </button>
 
-                    {/* View full session details - Bigger Size */}
+                    {/* View full session details */}
                     <button
                       onClick={() => setSelectedService(service)}
                       className="text-sm sm:text-base font-semibold tracking-wide text-mutedPurple hover:text-brandText transition-colors underline underline-offset-4 pt-0.5"
