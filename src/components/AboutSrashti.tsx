@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, HeartHandshake, CheckCircle2, X } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import srushtiClientPhoto from '../assets/srushti-client.jpg';
 
 interface AboutSrashtiProps {
-  onBookClick: () => void;
+  onBookClick?: () => void;
 }
 
-export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
+export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
   return (
     <section id="about" className="py-20 lg:py-28 relative overflow-hidden bg-grain">
       {/* Background lavender wash */}
@@ -38,7 +36,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
               {/* Subtle quote overlay */}
               <div className="absolute bottom-5 left-5 right-5 glass-card p-4 rounded-2xl border border-white/70">
                 <p className="font-editorial italic text-sm text-brandText leading-snug">
-                  "Let go. Learn to forgive & forget. Let go & go on living"
+                  "Let go. Learn to forgive &amp; forget. Let go &amp; go on living"
                 </p>
               </div>
             </div>
@@ -49,7 +47,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
             </div>
           </motion.div>
 
-          {/* RIGHT: Short, impactful editorial copy */}
+          {/* RIGHT: In-depth editorial story & bio */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -68,92 +66,31 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = ({ onBookClick }) => {
               {siteConfig.founderName}
             </h2>
 
-            {/* Strict 2-3 Line Introduction */}
+            {/* Introduction Quote */}
             <p className="font-editorial text-2xl sm:text-3xl text-brandText/90 font-light leading-relaxed max-w-xl">
               "Creating a personal space for healing, clarity and meaningful spiritual guidance."
             </p>
 
-            {/* Trust Pill Indicators */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-softCream border border-secondaryPurple/30 text-xs font-semibold tracking-wide text-brandText">
-                <CheckCircle2 className="w-3.5 h-3.5 text-mutedPurple" />
-                18+ Years Experience
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-softCream border border-secondaryPurple/30 text-xs font-semibold tracking-wide text-brandText">
-                <HeartHandshake className="w-3.5 h-3.5 text-mutedPurple" />
-                1,000+ Journeys Guided
-              </span>
-            </div>
+            {/* Subtle decorative divider */}
+            <div className="w-16 h-px bg-secondaryPurple/50" />
 
-            {/* Know Srushti CTA */}
-            <div className="pt-4 flex items-center gap-4">
-              <button
-                onClick={() => setModalOpen(true)}
-                className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase text-brandText hover:text-mutedPurple border-b-2 border-mutedPurple pb-1 hover:border-brandText transition-all duration-300 group"
-              >
-                <span>Know Dr. Srushti</span>
-                <ArrowRight className="w-4 h-4 text-mutedPurple group-hover:translate-x-1.5 transition-transform" />
-              </button>
-
-              <button
-                onClick={onBookClick}
-                className="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-lightLavender hover:bg-secondaryPurple/70 text-brandText transition-all"
-              >
-                Book Session
-              </button>
+            {/* Detailed bio paragraphs displayed directly on the page */}
+            <div className="space-y-4 text-base text-brandLightText leading-relaxed">
+              <p>
+                Dr. Srushti Garg is a practicing dentist and holistic wellness practitioner with over 18 years of experience in the world of Healing &amp; Tarot. Her journey began in conventional healthcare, with dentistry at its core.
+              </p>
+              <p>
+                She believes that healing is not one-size-fits-all. Every individual carries a unique story, emotional pattern and energy - and sometimes, we simply need the right guidance to understand ourselves better and move forward with greater clarity.
+              </p>
+              <p>
+                Through Bespoke Healer, her intention is to create a safe and compassionate space where people can pause, reconnect, release and realign - whether they are seeking clarity, emotional healing, energetic balance or simply a deeper connection with themselves.
+              </p>
             </div>
           </motion.div>
 
         </div>
       </div>
-
-      {/* Modal: Extended Journey of Dr. Srushti Garg */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brandText/40 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-softCream rounded-3xl p-6 sm:p-8 border border-secondaryPurple/40 shadow-2xl space-y-5">
-            <button
-              onClick={() => setModalOpen(false)}
-              className="absolute top-5 right-5 p-2 rounded-full hover:bg-lightLavender transition-colors text-brandText"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="space-y-1.5 pr-8">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-mutedPurple">
-                ✦ Sacred Heritage & Journey
-              </span>
-              <h3 className="font-editorial text-3xl text-brandText font-normal">
-                Dr. Srushti's Path & Philosophy
-              </h3>
-            </div>
-
-            <div className="space-y-3.5 text-sm text-brandLightText leading-relaxed">
-              <p>
-                Dr. Srushti Garg is a practicing dentist and holistic wellness practitioner with over 18 years of experience in the world of Healing &amp; Tarot. Her journey began in conventional healthcare, with dentistry at its core.
-              </p>
-              <p>
-                She believes that healing is not one-size-fits-all. Every individual carries a unique story, emotional pattern and energy—and sometimes, we simply need the right guidance to understand ourselves better and move forward with greater clarity.
-              </p>
-              <p>
-                Through Bespoke Healer, her intention is to create a safe and compassionate space where people can pause, reconnect, release and realign—whether they are seeking clarity, emotional healing, energetic balance or simply a deeper connection with themselves.
-              </p>
-            </div>
-
-            <div className="flex justify-end gap-3 pt-2">
-              <button
-                onClick={() => {
-                  setModalOpen(false);
-                  onBookClick();
-                }}
-                className="w-full py-3 rounded-full bg-mutedPurple text-white text-xs uppercase font-semibold tracking-wider hover:bg-[#9375a2] transition-colors"
-              >
-                Schedule Appointment with Dr. Srushti Garg
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
+
