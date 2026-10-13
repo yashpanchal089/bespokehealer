@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, Sparkles, ShoppingBag } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { faqsData } from '../data/faqs';
 import type { FAQItem } from '../data/faqs';
 
 export const FAQSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'all' | 'sessions' | 'shop'>('all');
 
   const toggle = (id: string) => {
     setOpenId(openId === id ? null : id);
   };
 
-  const sessionFaqs = faqsData.filter((f) => f.category === 'sessions');
-  const shopFaqs = faqsData.filter((f) => f.category === 'shop');
+  const leftFaqs = faqsData.slice(0, 5);
+  const rightFaqs = faqsData.slice(5, 10);
 
   const renderFaqCard = (faq: FAQItem) => {
     const isOpen = openId === faq.id;
@@ -87,90 +86,20 @@ export const FAQSection: React.FC = () => {
           <p className="text-sm sm:text-base text-brandLightText font-light">
             Everything you need to know about personal sessions, energy healing, and consecrated crystal boutique orders.
           </p>
-
-          {/* Equalized Filter Tabs */}
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-            <button
-              onClick={() => setActiveTab('all')}
-              className={`px-4 sm:px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                activeTab === 'all'
-                  ? 'bg-brandText text-white shadow-md'
-                  : 'bg-softCream text-brandText border border-secondaryPurple/40 hover:bg-lightLavender'
-              }`}
-            >
-              All Questions (10)
-            </button>
-
-            <button
-              onClick={() => setActiveTab('sessions')}
-              className={`inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                activeTab === 'sessions'
-                  ? 'bg-brandText text-white shadow-md'
-                  : 'bg-softCream text-brandText border border-secondaryPurple/40 hover:bg-lightLavender'
-              }`}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-secondaryPurple" />
-              <span>Sessions &amp; Readings (5)</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('shop')}
-              className={`inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                activeTab === 'shop'
-                  ? 'bg-brandText text-white shadow-md'
-                  : 'bg-softCream text-brandText border border-secondaryPurple/40 hover:bg-lightLavender'
-              }`}
-            >
-              <ShoppingBag className="w-3.5 h-3.5 text-secondaryPurple" />
-              <span>Crystals &amp; Orders (5)</span>
-            </button>
-          </div>
         </div>
 
-        {/* Content Layout */}
-        {activeTab === 'all' ? (
-          /* Perfectly Symmetrical 2-Column Grid (5 Left, 5 Right) */
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
-            
-            {/* Left Column: 5 Sessions Questions */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between pb-2 border-b border-secondaryPurple/25">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-mutedPurple">
-                  <Sparkles className="w-3.5 h-3.5 text-mutedPurple" />
-                  <span>Sessions &amp; Consultations</span>
-                </div>
-                <span className="text-[11px] font-semibold text-brandLightText bg-warmBeige px-2.5 py-0.5 rounded-full border border-secondaryPurple/20">
-                  5 Questions
-                </span>
-              </div>
-              <div className="space-y-3.5">
-                {sessionFaqs.map(renderFaqCard)}
-              </div>
-            </div>
-
-            {/* Right Column: 5 Shop & Crystal Questions */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between pb-2 border-b border-secondaryPurple/25">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-mutedPurple">
-                  <ShoppingBag className="w-3.5 h-3.5 text-mutedPurple" />
-                  <span>Crystals, Boutique &amp; Care</span>
-                </div>
-                <span className="text-[11px] font-semibold text-brandLightText bg-warmBeige px-2.5 py-0.5 rounded-full border border-secondaryPurple/20">
-                  5 Questions
-                </span>
-              </div>
-              <div className="space-y-3.5">
-                {shopFaqs.map(renderFaqCard)}
-              </div>
-            </div>
-
+        {/* Clean, Equal 2-Column Split: 5 Questions Left, 5 Questions Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 items-start">
+          {/* Left Column (5 Questions) */}
+          <div className="space-y-4">
+            {leftFaqs.map(renderFaqCard)}
           </div>
-        ) : (
-          /* Single Balanced Centered Column when specific tab is selected */
-          <div className="max-w-3xl mx-auto space-y-3.5">
-            {(activeTab === 'sessions' ? sessionFaqs : shopFaqs).map(renderFaqCard)}
+
+          {/* Right Column (5 Questions) */}
+          <div className="space-y-4">
+            {rightFaqs.map(renderFaqCard)}
           </div>
-        )}
+        </div>
 
       </div>
     </section>
