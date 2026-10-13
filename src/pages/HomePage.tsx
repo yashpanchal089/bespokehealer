@@ -4,7 +4,7 @@ import { StatsStrip } from '../components/StatsStrip';
 import { AboutSrashti } from '../components/AboutSrashti';
 import { ServicesSection } from '../components/ServicesSection';
 import { TarotExperience } from '../components/TarotExperience';
-import { PricingSection } from '../components/PricingSection';
+import { CorporateEventsSection } from '../components/CorporateEventsSection';
 import { ShopSection } from '../components/ShopSection';
 import { VisualBreak } from '../components/VisualBreak';
 import { TestimonialsSection } from '../components/TestimonialsSection';
@@ -23,7 +23,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onBookClick }) => {
       <AboutSrashti onBookClick={onBookClick} />
       <ServicesSection onBookClick={onBookClick} />
       <TarotExperience onBookClick={onBookClick} />
-      <PricingSection onBookClick={onBookClick} />
+      <CorporateEventsSection onBookClick={onBookClick} />
       <ShopSection isFullCatalogPage={false} />
       <VisualBreak />
       <TestimonialsSection />

@@ -50,3 +50,8 @@ export const getServiceWhatsAppUrl = (serviceName: string) => {
   const message = `Hi ${siteConfig.founderName} 👋\nI would love to book a ${serviceName} session with you.\nPlease let me know your available slots for a 60-minute personal consultation.`;
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
+
+export const getEventWhatsAppUrl = (eventType: string = 'Corporate / Wedding Event') => {
+  const message = `Hi ${siteConfig.founderName} 👋\nWe would love to invite you for a ${eventType}.\nPlease share your availability and event engagement details.`;
+  return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+};

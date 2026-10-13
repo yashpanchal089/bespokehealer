@@ -76,6 +76,11 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="/#events" className="hover:text-brandText transition-colors">
+                  Corporate &amp; Weddings
+                </a>
+              </li>
+              <li>
                 <a href="/#tarot-experience" className="hover:text-brandText transition-colors">
                   Tarot Experience
                 </a>
@@ -84,11 +89,6 @@ export const Footer: React.FC = () => {
                 <Link to="/shop" className="hover:text-brandText transition-colors">
                   Shop Creations
                 </Link>
-              </li>
-              <li>
-                <a href="/#pricing" className="hover:text-brandText transition-colors">
-                  Pricing & Sessions
-                </a>
               </li>
               <li>
                 <a href="/#testimonials" className="hover:text-brandText transition-colors">

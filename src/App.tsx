@@ -5,8 +5,10 @@ import { FloatingActions } from './components/FloatingActions';
 import { Footer } from './components/Footer';
 import { BookSessionModal } from './components/BookSessionModal';
 import { CustomCursor } from './components/CustomCursor';
+import { ScrollToTop } from './components/ScrollToTop';
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
+import { ServiceDetailPage } from './pages/ServiceDetailPage';
 
 export function App() {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
@@ -21,6 +23,9 @@ export function App() {
 
   return (
     <BrowserRouter>
+      {/* Scroll restoration upon page transitions */}
+      <ScrollToTop />
+
       <div className="min-h-screen bg-[#F5EFE6] text-[#40383F] font-sans flex flex-col selection:bg-[#F8EBF4] selection:text-[#40383F] relative">
         {/* Bespoke Interactive Mouse Cursor */}
         <CustomCursor />
@@ -36,6 +41,8 @@ export function App() {
           <Routes>
             <Route path="/" element={<HomePage onBookClick={handleOpenBookModal} />} />
             <Route path="/shop" element={<ShopPage />} />
+            <Route path="/services" element={<ServiceDetailPage onBookClick={handleOpenBookModal} />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage onBookClick={handleOpenBookModal} />} />
           </Routes>
         </div>
 

@@ -27,11 +27,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
 
   const navLinks = [
     { label: 'Home', href: '/#hero' },
-    { label: 'Services', href: '/#services' },
     { label: 'About', href: '/#about' },
+    { label: 'Services', href: '/#services' },
     { label: 'Tarot', href: '/#tarot-experience' },
-    { label: 'Shop', href: '/shop' },
-    { label: 'Pricing', href: '/#pricing' },
+    { label: 'Events', href: '/#events' },
+    { label: 'Shop', href: '/#shop' },
     { label: 'FAQ', href: '/#faq' },
   ];
 
@@ -162,16 +162,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-warmBeige/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col justify-between pb-10 animate-fadeIn">
           <nav className="flex flex-col space-y-4 text-center">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-editorial text-2xl text-brandText hover:text-mutedPurple transition-colors py-1"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isAnchor = link.href.startsWith('/#');
+              const targetHref = isAnchor && location.pathname === '/' ? link.href.replace('/', '') : link.href;
+              return (
+                <a
+                  key={link.label}
+                  href={targetHref}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-editorial text-2xl text-brandText hover:text-mutedPurple transition-colors py-1"
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="pt-6 border-t border-secondaryPurple/30 flex flex-col items-center gap-4">
