@@ -102,8 +102,8 @@ export const servicesData: Service[] = [
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
     shortDescription: "Reconnect. Rebalance. Restore.",
     description: "Gentle vibrational restoration working with chakra clearing, sacred breath, and auric cord-cutting to dissolve lingering heaviness and realign your body's subtle bio-field.",
-    duration: "60 Minutes",
-    price: "₹2,000",
+    duration: "30 Minutes",
+    price: "₹1,000",
     featured: false,
     editorialHighlight: "Deep Restoration",
     whatsappMessage: "Hi Dr. Srushti 👋 I am interested in an Energy Healing session. Please let me know your consultation schedule.",
@@ -167,7 +167,7 @@ export const servicesData: Service[] = [
       "Those who feel physically well but spiritually depleted or disconnected from vitality"
     ],
     whatIsIncluded: [
-      "60-Minute comprehensive energetic diagnostic and restoration session",
+      "30-Minute comprehensive energetic diagnostic and restoration session",
       "Full 7-chakra scanning report with personalized balancing observations",
       "Targeted auric cord detachment and energetic cleansing ritual",
       "Take-home daily grounding & psychic protection practices",

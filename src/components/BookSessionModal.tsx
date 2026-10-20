@@ -20,11 +20,15 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
   const [timePreference, setTimePreference] = useState<string>('Afternoon (2 PM - 5 PM)');
   const [clientName, setClientName] = useState<string>('');
 
+  const isEnergyHealing = service === 'Energy Healing';
+  const sessionDuration = isEnergyHealing ? '30 Minutes' : '60 Minutes';
+  const sessionFee = isEnergyHealing ? '₹1,000' : '₹2,000';
+
   if (!isOpen) return null;
 
   const handleSubmitWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hi ${siteConfig.founderName} 👋\n\nI would love to book a 60-Minute Personal Consultation:\n• Name: ${clientName || 'Seeker'}\n• Service: ${service}\n• Session Mode: ${mode}\n• Preferred Time: ${timePreference}\n• Fee: ₹2,000 (60 Mins)\n\nPlease share your earliest available dates!`;
+    const message = `Hi ${siteConfig.founderName} 👋\n\nI would love to book a ${sessionDuration} Personal Consultation:\n• Name: ${clientName || 'Seeker'}\n• Service: ${service}\n• Session Mode: ${mode}\n• Preferred Time: ${timePreference}\n• Fee: ${sessionFee} (${sessionDuration})\n\nPlease share your earliest available dates!`;
     window.open(getWhatsAppUrl(message), '_blank');
     onClose();
   };
@@ -52,7 +56,7 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
             Schedule Appointment with Dr. Srushti Garg
           </h3>
           <p className="text-xs text-brandLightText font-light">
-            Dedicated 60-minute space for clarity, energy realignment & grounded truth.
+            Dedicated {sessionDuration.toLowerCase()} space for clarity, energy realignment & grounded truth.
           </p>
         </div>
 
@@ -60,11 +64,11 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
         <div className="p-3.5 rounded-2xl bg-warmBeige border border-secondaryPurple/30 flex items-center justify-between text-xs mb-6">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-mutedPurple" />
-            <span className="font-medium text-brandText">60 Minutes</span>
+            <span className="font-medium text-brandText">{sessionDuration}</span>
           </div>
           <div className="flex items-center gap-1 text-emerald-800 font-medium">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Transparent Fee: ₹2,000</span>
+            <span>Transparent Fee: {sessionFee}</span>
           </div>
         </div>
 
