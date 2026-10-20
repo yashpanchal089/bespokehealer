@@ -14,6 +14,8 @@ export interface SiteConfig {
   displayPhoneNumber: string;
   instagramUrl: string;
   facebookUrl: string;
+  address: string;
+  googleMapsUrl: string;
   disclaimer: string;
 }
 
@@ -33,6 +35,8 @@ export const siteConfig: SiteConfig = {
   displayPhoneNumber: "+91 98765 43210",
   instagramUrl: "https://instagram.com/bespokehealer",
   facebookUrl: "https://facebook.com/bespokehealer",
+  address: "Shop no.28, Link Rd, next to Sai Car Care, Shimpoli, Borivali West, Mumbai, Maharashtra 400091",
+  googleMapsUrl: "https://maps.app.goo.gl/fJZL18iQxEUCFQqe6",
   disclaimer: "Spiritual guidance, tarot consultations, crystal suggestions, and energy sessions are holistic practices intended for personal reflection, emotional calm, and well-being. They do not replace professional medical, legal, or psychological care.",
 };
 

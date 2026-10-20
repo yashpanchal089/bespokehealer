@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, MapPin, ExternalLink } from 'lucide-react';
 import { siteConfig, getWhatsAppUrl } from '../data/config';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 
@@ -130,6 +130,25 @@ export const Footer: React.FC = () => {
                 <div>
                   <span className="block text-[10px] uppercase text-brandLightText">Direct WhatsApp</span>
                   <span className="font-medium">Connect with Dr. Srushti</span>
+                </div>
+              </a>
+
+              <a
+                href={siteConfig.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5 p-3 rounded-2xl bg-warmBeige border border-secondaryPurple/30 text-brandText hover:bg-lightLavender/50 transition-colors group"
+              >
+                <MapPin className="w-4 h-4 text-mutedPurple shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <div className="space-y-0.5">
+                  <span className="block text-[10px] uppercase text-brandLightText">Sanctuary Location</span>
+                  <span className="font-medium leading-snug block text-xs">
+                    {siteConfig.address}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-mutedPurple pt-1">
+                    <span>View on Google Maps</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </span>
                 </div>
               </a>
             </div>

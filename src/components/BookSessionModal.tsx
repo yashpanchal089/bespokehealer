@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, Clock, Video, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { X, Sparkles, Clock, Video, MapPin, MessageCircle, CheckCircle2, ExternalLink } from 'lucide-react';
 import { siteConfig, getWhatsAppUrl } from '../data/config';
 
 interface BookSessionModalProps {
@@ -141,6 +141,29 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
                 <span>In-Person</span>
               </button>
             </div>
+
+            {mode === 'In-Person' && (
+              <div className="mt-2.5 p-3 rounded-2xl bg-warmBeige/80 border border-secondaryPurple/30 text-xs space-y-1 animate-fadeIn">
+                <div className="flex items-center gap-1.5 font-medium text-brandText">
+                  <MapPin className="w-3.5 h-3.5 text-mutedPurple shrink-0" />
+                  <span>Sanctuary Address:</span>
+                </div>
+                <p className="text-[11px] text-brandLightText font-light pl-5 leading-relaxed">
+                  {siteConfig.address}
+                </p>
+                <div className="pl-5 pt-0.5">
+                  <a
+                    href={siteConfig.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-semibold text-mutedPurple hover:underline inline-flex items-center gap-1"
+                  >
+                    <span>View on Google Maps</span>
+                    <ExternalLink className="w-2.5 h-2.5" />
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Select Preferred Time */}
