@@ -11,8 +11,9 @@ export const FAQSection: React.FC = () => {
     setOpenId(openId === id ? null : id);
   };
 
-  const leftFaqs = faqsData.slice(0, 5);
-  const rightFaqs = faqsData.slice(5, 10);
+  const half = Math.ceil(faqsData.length / 2);
+  const leftFaqs = faqsData.slice(0, half);
+  const rightFaqs = faqsData.slice(half);
 
   const renderFaqCard = (faq: FAQItem) => {
     const isOpen = openId === faq.id;

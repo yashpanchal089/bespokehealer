@@ -14,16 +14,10 @@ export const faqsData: FAQItem[] = [
     answer: "A confidential 1-on-1 dialogue. We center your energy, focus on key areas (love, career, transitions), and unveil clear intuitive patterns, root causes, and practical next steps."
   },
   {
-    id: "faq-session-2",
-    category: "sessions",
-    question: "How long is a session and what is the fee?",
-    answer: "Standard 1-on-1 consultations run for 60 minutes at ₹2,000. It is an unhurried, private sanctuary tailored completely to your questions and emotional alignment."
-  },
-  {
     id: "faq-session-3",
     category: "sessions",
     question: "Can sessions be conducted online or remotely?",
-    answer: "Yes, absolutely. Over 70% of clients consult via Google Meet, Zoom, or WhatsApp video call. Energetic resonance and clarity transcend physical distance with identical potency."
+    answer: "Energetic resonance and clarity transcend physical distance with identical potency."
   },
   {
     id: "faq-session-4",
@@ -37,6 +31,12 @@ export const faqsData: FAQItem[] = [
     question: "How should I prepare before attending my session?",
     answer: "Find a quiet, comfortable space where you won't be interrupted. Have water nearby, take a few deep breaths, and come with an open heart ready for clarity."
   },
+  {
+    id: "faq-session-cancellation",
+    category: "sessions",
+    question: "What is the cancellation policy for sessions?",
+    answer: "Cancellations made at least 24 hours prior to the scheduled slot are eligible for a refund with a 10% deduction. Cancellations within 24 hours of the slot are non-refundable."
+  },
 
   // ================= 5 Balanced Shop & Crystal Questions =================
   {
@@ -49,19 +49,19 @@ export const faqsData: FAQItem[] = [
     id: "faq-shop-2",
     category: "shop",
     question: "How are the crystals cleansed and consecrated?",
-    answer: "Every piece is 100% natural earth crystal, cleansed with moonlight, smudged with sacred herbs, and energetically blessed by Dr. Srushti prior to dispatch."
-  },
-  {
-    id: "faq-shop-3",
-    category: "shop",
-    question: "How do I order energized botanical bath salts?",
-    answer: "Select your desired blend (Love, Stress Release, Nazar, or Daily Detox) and tap 'Enquire on WhatsApp'. We blend fresh small batches with pan-India dispatch."
+    answer: "We will share the rituals to cleanse and consecrate your crystals."
   },
   {
     id: "faq-shop-4",
     category: "shop",
-    question: "Do you offer space cleansing guidance for homes?",
-    answer: "Yes. Dr. Srushti provides custom energetic space assessments using specific crystals, sacred wall hangings, and cleansing protocols for living and work environments."
+    question: "Do you offer space cleansing guidance for homes and offices?",
+    answer: "Yes, Dr. Srushti provides home and office energy cleansing."
+  },
+  {
+    id: "faq-shop-cancellation",
+    category: "shop",
+    question: "Can I cancel my product order?",
+    answer: "Orders can be cancelled before dispatch. Once the product has been dispatched, it cannot be cancelled."
   },
   {
     id: "faq-shop-5",
