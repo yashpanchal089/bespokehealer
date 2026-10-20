@@ -5,10 +5,7 @@ import {
   Sparkles,
   Clock,
   MessageCircle,
-  Calendar,
   CheckCircle2,
-  ShieldCheck,
-  Video,
   Heart,
   ArrowRight
 } from 'lucide-react';
@@ -111,7 +108,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
               <img
                 src={currentService.image}
                 alt={currentService.name}
-                className="w-full h-full object-cover object-center"
+                className={`w-full h-full object-cover ${currentService.imagePosition || 'object-center'}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               
@@ -134,34 +131,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
             </div>
 
 
-            {/* Practical Meta Information */}
-            <div className="p-4 rounded-2xl bg-warmBeige/70 border border-secondaryPurple/20 space-y-2.5 text-xs text-brandLightText">
-              <div className="flex items-start gap-2.5">
-                <Video className="w-4 h-4 text-mutedPurple shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold text-brandText">Session Format: </span>
-                  <span>{currentService.sessionMode || "Online Video (Zoom / Google Meet) or In-Person"}</span>
-                </div>
-              </div>
 
-              {currentService.idealFrequency && (
-                <div className="flex items-start gap-2.5">
-                  <Calendar className="w-4 h-4 text-mutedPurple shrink-0 mt-0.5" />
-                  <div>
-                    <span className="font-semibold text-brandText">Ideal Rhythm: </span>
-                    <span>{currentService.idealFrequency}</span>
-                  </div>
-                </div>
-              )}
-
-              <div className="flex items-start gap-2.5">
-                <ShieldCheck className="w-4 h-4 text-mutedPurple shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold text-brandText">Confidentiality: </span>
-                  <span>100% Private, Sacred & Non-Judgmental Container</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Deep Dive & Details */}
@@ -208,14 +178,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
             )}
 
             {/* Founder Note Quote */}
-            <div className="p-5 rounded-2xl bg-lightLavender/60 border border-secondaryPurple/30 relative">
-              <p className="font-editorial text-base sm:text-lg text-brandText italic leading-snug">
-                "When you step into this space, you don't need to have all the answers. You only need the willingness to pause, listen, and let your energy speak."
-              </p>
-              <p className="text-xs uppercase tracking-widest text-mutedPurple font-semibold mt-2">
-                — {siteConfig.founderName}, Founder & Intuitive Healer
-              </p>
-            </div>
+
 
           </div>
         </div>

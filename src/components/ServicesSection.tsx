@@ -54,7 +54,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                   <img
                     src={service.image}
                     alt={service.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className={`w-full h-full object-cover ${service.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-700 ease-out`}
                   />
                   {/* Subtle hover overlay badge */}
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

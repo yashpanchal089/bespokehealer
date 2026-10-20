@@ -1,4 +1,5 @@
 import tarotCardReadingImg from '../assets/tarot-reading-full.jpg';
+import crystalsImg from '../assets/crystals-collection.jpg';
 
 export interface ServiceBenefit {
   title: string;
@@ -41,6 +42,7 @@ export interface Service {
   faqs?: ServiceFaq[];
   idealFrequency?: string;
   sessionMode?: string;
+  imagePosition?: string;
 }
 
 export const servicesData: Service[] = [
@@ -66,8 +68,7 @@ export const servicesData: Service[] = [
     sessionMode: "Private Video Call (Zoom / Google Meet) or In-Person Sanctuary",
     idealFrequency: "Every 2–3 months or whenever approaching a major life crossroads",
     philosophy: [
-      "Tarot is far more than fortune-telling; it is a sacred energetic mirror that reflects your subconscious mind, emotional undercurrents, and the universal forces shaping your current reality.",
-      "In this confidential 1-on-1 session, Dr. Srushti provides a non-judgmental, grounded sanctuary where archetypal wisdom illuminates what has been hidden, helping you make empowered decisions in love, career, and personal growth."
+      "Tarot is far more than fortune-telling; it is a sacred energetic mirror that reflects your subconscious mind, emotional undercurrents, and the universal forces shaping your current reality."
     ],
     benefits: [
       {
@@ -87,40 +88,11 @@ export const servicesData: Service[] = [
         description: "Leave with clear, actionable steps and positive affirmations rather than vague or fatalistic predictions."
       }
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Centering & Intention Setting",
-        description: "We begin with a brief breath grounding to quiet mental noise, open a protected container, and define the themes you wish to explore."
-      },
-      {
-        step: "02",
-        title: "Intuitive Spread & Channeling",
-        description: "Dr. Srushti draws cards attuned to your unique aura, uncovering past influences, present dynamics, and emerging trajectories."
-      },
-      {
-        step: "03",
-        title: "Collaborative Deep Dive & Q&A",
-        description: "A compassionate dialogue where you can ask specific follow-up questions, clarify nuances, and seek guidance on relationships or work."
-      },
-      {
-        step: "04",
-        title: "Integration & Affirmations",
-        description: "We close with grounded recommendations, personalized affirmations, and a sacred blessing for your path ahead."
-      }
-    ],
-    whoIsThisFor: [
-      "Individuals standing at major career, business, or educational crossroads",
-      "Anyone seeking clarity, closure, or renewed understanding in love and relationships",
-      "Those experiencing persistent mental fog, indecision, or feeling energetically blocked",
-      "Spiritual seekers looking for authentic, grounded guidance without fear or superstition"
-    ],
+
     whatIsIncluded: [
-      "60-Minute private, confidential 1-on-1 consultation with Dr. Srushti Garg",
-      "Custom multi-card spreads focused on your top questions and energy dynamics",
-      "Detailed photographic capture or notes of your card spreads for personal reflection",
-      "Personalized grounding affirmation and post-session integration guidance",
-      "Opportunity for direct follow-up questions during the session"
+      "Unlimited questions for 60 mins",
+      "Questions can be asked related to one person only.",
+      "Personalized solutions will be provided."
     ]
   },
   {
@@ -204,9 +176,10 @@ export const servicesData: Service[] = [
   },
   {
     id: "crystals-guidance",
-    name: "Crystals & Gemstones",
+    name: "Crystals",
     slug: "crystals",
-    image: "https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?q=80&w=1200&auto=format&fit=crop",
+    image: crystalsImg,
+    imagePosition: "object-[center_35%]",
     shortDescription: "Attune to the sacred energy of healing crystals.",
     description: "Personalized crystal pairing attuned to your unique energetic vibration, astrological blueprint, and chakra centers. Handpicked, authentic gemstones intuitively selected and energetically cleansed to ground inner peace, dissolve negative blockages, and amplify your highest intentions.",
     duration: "Personalised",

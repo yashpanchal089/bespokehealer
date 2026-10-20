@@ -279,7 +279,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
               <span className="text-[#E5A8CE]">•</span>
               <span className="hover:text-[#2B2329] transition-colors cursor-default">1,000+ Happy Seekers</span>
               <span className="text-[#E5A8CE]">•</span>
-              <span className="hover:text-[#2B2329] transition-colors cursor-default">Online & In-Person Office</span>
+              <span className="hover:text-[#2B2329] transition-colors cursor-default">Online & In-Person consultation</span>
             </motion.div>
           </motion.div>
 

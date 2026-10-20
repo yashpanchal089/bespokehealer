@@ -16,7 +16,7 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
   const [service, setService] = useState<string>(
     preselectedService || 'Tarot Card Reading'
   );
-  const [mode, setMode] = useState<'Online Video' | 'Studio In-Person'>('Online Video');
+  const [mode, setMode] = useState<'Online Video' | 'In-Person'>('Online Video');
   const [timePreference, setTimePreference] = useState<string>('Afternoon (2 PM - 5 PM)');
   const [clientName, setClientName] = useState<string>('');
 
@@ -130,15 +130,15 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
 
               <button
                 type="button"
-                onClick={() => setMode('Studio In-Person')}
+                onClick={() => setMode('In-Person')}
                 className={`p-3 rounded-2xl text-xs font-medium border flex items-center justify-center gap-2 transition-all ${
-                  mode === 'Studio In-Person'
+                  mode === 'In-Person'
                     ? 'bg-mutedPurple text-white border-mutedPurple shadow-sm'
                     : 'bg-white/80 text-brandText border-secondaryPurple/30 hover:bg-lightLavender/50'
                 }`}
               >
                 <MapPin className="w-3.5 h-3.5" />
-                <span>Studio Consultation</span>
+                <span>In-Person</span>
               </button>
             </div>
           </div>

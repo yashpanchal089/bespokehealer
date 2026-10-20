@@ -9,7 +9,6 @@ import { ShopSection } from '../components/ShopSection';
 import { VisualBreak } from '../components/VisualBreak';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { FAQSection } from '../components/FAQSection';
-import { InstagramBanner } from '../components/InstagramBanner';
 
 interface HomePageProps {
   onBookClick: () => void;
@@ -28,7 +27,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onBookClick }) => {
       <VisualBreak />
       <TestimonialsSection />
       <FAQSection />
-      <InstagramBanner />
     </main>
   );
 };
