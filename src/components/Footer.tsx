@@ -141,7 +141,7 @@ export const Footer: React.FC = () => {
               >
                 <MapPin className="w-4 h-4 text-mutedPurple shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <div className="space-y-0.5">
-                  <span className="block text-[10px] uppercase text-brandLightText">Sanctuary Location</span>
+                  <span className="block text-[10px] uppercase text-brandLightText">Office Location</span>
                   <span className="font-medium leading-snug block text-xs">
                     {siteConfig.address}
                   </span>
