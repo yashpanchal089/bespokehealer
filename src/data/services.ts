@@ -30,7 +30,7 @@ export interface Service {
   editorialHighlight?: string;
   whatsappMessage?: string;
   features?: string[];
-  
+
   // Extended details for dedicated details page
   subtitle?: string;
   tagline?: string;
@@ -73,19 +73,19 @@ export const servicesData: Service[] = [
     benefits: [
       {
         title: "Deep Emotional Clarity",
-        description: "Dissolve overthinking and confusion by seeing the root energetic patterns of your current life situation."
+        description: ""
       },
       {
         title: "Crossroads Guidance",
-        description: "Navigate difficult dilemmas in relationships, career shifts, and financial choices with grounded foresight."
+        description: ""
       },
       {
-        title: "Identify Hidden Blockages",
-        description: "Uncover unconscious belief systems or lingering past ties that may be slowing down your growth."
+        title: "Understanding Your Relationships",
+        description: ""
       },
       {
         title: "Empowering Action Plan",
-        description: "Leave with clear, actionable steps and positive affirmations rather than vague or fatalistic predictions."
+        description: ""
       }
     ],
 

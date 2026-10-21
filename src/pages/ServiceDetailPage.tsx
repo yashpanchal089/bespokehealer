@@ -250,25 +250,32 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {currentService.benefits.map((benefit, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-2xl bg-softCream border border-secondaryPurple/30 shadow-sm hover:shadow-md transition-all space-y-2.5"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-lightLavender flex items-center justify-center text-mutedPurple text-xs font-semibold">
-                      ✦
-                    </span>
-                    <h3 className="font-editorial text-xl text-brandText font-normal">
-                      {benefit.title}
-                    </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 max-w-4xl mx-auto">
+              {currentService.benefits.map((benefit, idx) => {
+                const hasDesc = Boolean(benefit.description && benefit.description.trim() !== '' && benefit.description.trim() !== '.');
+                return (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl bg-softCream border border-secondaryPurple/30 shadow-xs hover:border-secondaryPurple/60 transition-all ${
+                      hasDesc ? 'p-5 sm:p-6 space-y-2' : 'p-3.5 sm:p-4 flex items-center gap-2.5'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-6 h-6 rounded-full bg-lightLavender flex items-center justify-center text-mutedPurple text-xs font-semibold shrink-0">
+                        ✦
+                      </span>
+                      <h3 className="font-editorial text-base sm:text-lg text-brandText font-normal">
+                        {benefit.title}
+                      </h3>
+                    </div>
+                    {hasDesc && (
+                      <p className="text-xs sm:text-sm text-brandLightText font-light leading-relaxed pl-8">
+                        {benefit.description}
+                      </p>
+                    )}
                   </div>
-                  <p className="text-xs sm:text-sm text-brandLightText font-light leading-relaxed pl-8">
-                    {benefit.description}
-                  </p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
