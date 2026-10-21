@@ -214,7 +214,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                     1 Question Reading
                   </h4>
                   <p className="text-xs text-brandLightText font-light leading-relaxed">
-                    Direct, targeted clarity and guidance for one specific question or pressing dilemma.
+                    Direct, targeted clarity and guidance for one specific question.
                   </p>
                 </div>
               </div>
