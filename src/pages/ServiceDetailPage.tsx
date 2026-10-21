@@ -183,6 +183,65 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
           </div>
         </div>
 
+        {/* ================= Tarot Rate Cards (Informational Only) ================= */}
+        {currentService.id === 'tarot-reading' && (
+          <div className="space-y-4 pt-2">
+            <div className="text-center space-y-1">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-mutedPurple">
+                ✦ Consultation Options
+              </span>
+              <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal">
+                Tarot Session Plans
+              </h3>
+              <p className="text-xs text-brandLightText font-light">
+                Transparent consultation offerings tailored to your immediate questions or deep life transitions
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              {/* Card 1: 1 Question */}
+              <div className="p-5 rounded-2xl bg-softCream border border-secondaryPurple/30 shadow-xs hover:border-secondaryPurple/60 transition-all flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-0.5 rounded-full bg-lightLavender text-[10px] font-semibold uppercase tracking-wider text-mutedPurple border border-secondaryPurple/30">
+                      Single Focus
+                    </span>
+                    <span className="font-editorial text-2xl font-semibold text-brandText">
+                      ₹500
+                    </span>
+                  </div>
+                  <h4 className="font-editorial text-lg text-brandText font-normal">
+                    1 Question Reading
+                  </h4>
+                  <p className="text-xs text-brandLightText font-light leading-relaxed">
+                    Direct, targeted clarity and guidance for one specific question or pressing dilemma.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2: 60 Minutes */}
+              <div className="p-5 rounded-2xl bg-warmBeige/60 border border-mutedPurple/30 shadow-xs hover:border-mutedPurple/60 transition-all flex flex-col justify-between relative overflow-hidden">
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-0.5 rounded-full bg-mutedPurple text-white text-[10px] font-semibold uppercase tracking-wider shadow-xs">
+                      Full Immersion
+                    </span>
+                    <span className="font-editorial text-2xl font-semibold text-brandText">
+                      ₹2,000
+                    </span>
+                  </div>
+                  <h4 className="font-editorial text-lg text-brandText font-normal">
+                    60 Minutes Session
+                  </h4>
+                  <p className="text-xs text-brandLightText font-light leading-relaxed">
+                    Unlimited questions for 60 minutes with personalized solutions and complete life-path guidance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* ================= 4. Key Benefits Grid ================= */}
         {currentService.benefits && currentService.benefits.length > 0 && (
           <div className="space-y-8">
