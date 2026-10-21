@@ -51,7 +51,7 @@ export const servicesData: Service[] = [
     name: "Tarot Card Reading",
     slug: "tarot-card-reading",
     image: tarotCardReadingImg,
-    shortDescription: "Clarity when you need it most.",
+    shortDescription: "",
     description: "An intuitive 1-on-1 dialogue with the archetypes. We illuminate your current crossroads, reveal hidden emotional patterns, and find grounded spiritual clarity for love, career, and personal transition.",
     duration: "60 Minutes",
     price: "₹2,000",
@@ -63,7 +63,7 @@ export const servicesData: Service[] = [
       "Grounded clarity for love, career & pivotal crossroads",
       "Uncover emotional patterns & receive future direction"
     ],
-    subtitle: "Sacred Mirror of the Soul & Archetypal Wisdom",
+    // subtitle: "Sacred Mirror of the Soul & Archetypal Wisdom",
     tagline: "Move from uncertainty into grounded clarity, purpose and peace.",
     sessionMode: "Private Video Call (Zoom / Google Meet) or In-Person Sanctuary",
     idealFrequency: "Every 2–3 months or whenever approaching a major life crossroads",

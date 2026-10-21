@@ -30,7 +30,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
             Tarot • Healing • Crystals
           </p>
           <p className="text-sm sm:text-base text-brandLightText font-light max-w-lg">
-            Curated holistic pathways designed to dissolve uncertainty and realign your inner vibration.
+            
           </p>
         </div>
 

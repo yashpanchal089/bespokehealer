@@ -41,7 +41,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
       <div className="absolute top-96 left-5 w-80 h-80 rounded-full warm-glow pointer-events-none filter blur-3xl opacity-30" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
-        
+
         {/* ================= 1. Top Navigation & Return Link ================= */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-b border-secondaryPurple/20 pb-6">
           <Link
@@ -85,11 +85,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                 <button
                   key={service.id}
                   onClick={() => handleSelectService(service)}
-                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                    isActive
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
                       ? 'bg-brandText text-white shadow-md scale-105'
                       : 'bg-softCream text-brandText border border-secondaryPurple/40 hover:bg-lightLavender hover:border-mutedPurple'
-                  }`}
+                    }`}
                 >
                   <Sparkles className={`w-3.5 h-3.5 ${isActive ? 'text-secondaryPurple' : 'text-mutedPurple'}`} />
                   <span>{service.name}</span>
@@ -101,7 +100,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
 
         {/* ================= 3. Main Showcase Spotlight Card (Two Columns) ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start bg-softCream/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-10 border border-secondaryPurple/30 shadow-xl">
-          
+
           {/* Left Column: Visual & Quick Booking Hub */}
           <div className="lg:col-span-5 space-y-6">
             <div className="relative rounded-2xl overflow-hidden shadow-lg border border-secondaryPurple/30 bg-warmBeige/20 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
@@ -111,7 +110,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                 className={`w-full h-full object-cover ${currentService.imagePosition || 'object-center'}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-              
+
               <div className="absolute top-4 left-4">
                 <span className="px-3 py-1 rounded-full bg-softCream/95 backdrop-blur-md text-[10px] font-semibold uppercase tracking-[0.2em] text-mutedPurple border border-secondaryPurple/40 shadow-sm">
                   ✦ {currentService.editorialHighlight || 'Signature Offering'}
@@ -136,7 +135,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
 
           {/* Right Column: Deep Dive & Details */}
           <div className="lg:col-span-7 space-y-8">
-            
+
             {/* The Essence & Philosophy */}
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
@@ -194,7 +193,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                 Tarot Session Plans
               </h3>
               <p className="text-xs text-brandLightText font-light">
-                Transparent consultation offerings tailored to your immediate questions or deep life transitions
+
               </p>
             </div>
 
