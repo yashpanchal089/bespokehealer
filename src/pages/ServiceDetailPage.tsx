@@ -192,14 +192,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
               <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal">
                 Tarot Session Plans
               </h3>
-              <p className="text-xs text-brandLightText font-light">
-
-              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
               {/* Card 1: 1 Question */}
-              <div className="p-5 rounded-2xl bg-softCream border border-secondaryPurple/30 shadow-xs hover:border-secondaryPurple/60 transition-all flex flex-col justify-between">
+              <div className="p-5 rounded-2xl bg-white border border-secondaryPurple/30 shadow-xs hover:border-secondaryPurple/60 transition-all flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="px-2.5 py-0.5 rounded-full bg-lightLavender text-[10px] font-semibold uppercase tracking-wider text-mutedPurple border border-secondaryPurple/30">
@@ -219,10 +216,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
               </div>
 
               {/* Card 2: 60 Minutes */}
-              <div className="p-5 rounded-2xl bg-warmBeige/60 border border-mutedPurple/30 shadow-xs hover:border-mutedPurple/60 transition-all flex flex-col justify-between relative overflow-hidden">
+              <div className="p-5 rounded-2xl bg-white border border-secondaryPurple/30 shadow-xs hover:border-secondaryPurple/60 transition-all flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-0.5 rounded-full bg-mutedPurple text-white text-[10px] font-semibold uppercase tracking-wider shadow-xs">
+                    <span className="px-2.5 py-0.5 rounded-full bg-lightLavender text-[10px] font-semibold uppercase tracking-wider text-mutedPurple border border-secondaryPurple/30">
                       Full Immersion
                     </span>
                     <span className="font-editorial text-2xl font-semibold text-brandText">
