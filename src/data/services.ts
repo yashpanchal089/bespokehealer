@@ -22,7 +22,7 @@ export interface Service {
   name: string;
   slug: string;
   image: string;
-  shortDescription: string;
+  shortDescription?: string;
   description: string;
   duration: string;
   price: string;
@@ -34,6 +34,7 @@ export interface Service {
   // Extended details for dedicated details page
   subtitle?: string;
   tagline?: string;
+  philosophyTitle?: string;
   philosophy?: string[];
   benefits?: ServiceBenefit[];
   processSteps?: ServiceStep[];
@@ -100,7 +101,6 @@ export const servicesData: Service[] = [
     name: "Energy Healing",
     slug: "energy-healing",
     image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop",
-    shortDescription: "Reconnect. Rebalance. Restore.",
     description: "Gentle vibrational restoration working with chakra clearing, sacred breath, and auric cord-cutting to dissolve lingering heaviness and realign your body's subtle bio-field.",
     duration: "30 Minutes",
     price: "₹1,000",
@@ -112,53 +112,12 @@ export const servicesData: Service[] = [
       "Chakra clearing, sacred breath & energetic cord-cutting",
       "Dissolve lingering heaviness & restore inner harmony"
     ],
-    subtitle: "Bio-Field Realignment, Chakra Cleansing & Pranic Renewal",
     tagline: "Release accumulated heaviness and awaken your natural state of peace.",
     sessionMode: "Distance Energy Session (Remote Video / Audio) or In-Person Sanctuary",
     idealFrequency: "Monthly maintenance or whenever recovering from high stress and emotional burnout",
     philosophy: [
       "Everything in our life experience—emotional grief, workplace stress, physical exhaustion, and toxic environments—leaves an imprint on our subtle energy centers (chakras) and surrounding auric field.",
-      "Energy Healing is a restorative holistic modality that channels high-frequency life-force energy (Prana) to dissolve energetic blockages, sever draining psychic cords, and restore your natural harmony."
-    ],
-    benefits: [
-      {
-        title: "Deep Nervous System Relief",
-        description: "Shifts your physiology from chronic fight-or-flight into deep, nourishing parasympathetic relaxation."
-      },
-      {
-        title: "7-Chakra Balancing",
-        description: "Clears congested vortices from Root to Crown, allowing your life force to circulate freely and vibrantly."
-      },
-      {
-        title: "Auric Cord-Cutting",
-        description: "Gently detaches draining emotional cords connected to past partners, stressful jobs, or energetic vampires."
-      },
-      {
-        title: "Lighter, Luminous State",
-        description: "Clients consistently report feeling noticeably lighter, mentally unburdened, and deeply refreshed."
-      }
-    ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Bio-Field Diagnostic Scan",
-        description: "Dr. Srushti intuitively scans your aura to pinpoint depleted, congested, or over-active energy centers."
-      },
-      {
-        step: "02",
-        title: "Pranic Breath & Grounding",
-        description: "Gentle guided breathwork settles your physical body into a serene meditative receptive state."
-      },
-      {
-        step: "03",
-        title: "Chakra Clearing & Cord Severing",
-        description: "Targeted vibrational clearing to lift dense energetic debris and disconnect toxic attachments."
-      },
-      {
-        step: "04",
-        title: "Aura Sealing & Harmonization",
-        description: "Sealing your energetic shield with positive frequencies, safeguarding your vitality for weeks ahead."
-      }
+      "Energy Healing is a restorative holistic modality that channels high-frequency life-force energy (Prana) to dissolve energetic blockages, Disconnect negative energy cords, and restore your natural harmony."
     ],
     whoIsThisFor: [
       "Anyone suffering from persistent exhaustion, chronic stress, or emotional burnout",
@@ -167,11 +126,10 @@ export const servicesData: Service[] = [
       "Those who feel physically well but spiritually depleted or disconnected from vitality"
     ],
     whatIsIncluded: [
-      "30-Minute comprehensive energetic diagnostic and restoration session",
-      "Full 7-chakra scanning report with personalized balancing observations",
-      "Targeted auric cord detachment and energetic cleansing ritual",
-      "Take-home daily grounding & psychic protection practices",
-      "Nutritional and herbal hydration recommendations for energetic integration"
+      "Complete aura cleansing",
+      "Activating your chakras",
+      "Remove negative cords (nazar)",
+      "Simple remedies to stay protected"
     ]
   },
   {
@@ -196,59 +154,14 @@ export const servicesData: Service[] = [
     tagline: "Harness stable, primordial earth frequencies to anchor peace and abundance.",
     sessionMode: "Personalized Consultation via WhatsApp / Video Call + Secure Delivery",
     idealFrequency: "One-time consultation with stones providing lifelong energetic support",
+    philosophyTitle: "What are Crystals?",
     philosophy: [
-      "Formed over millions of years under immense tectonic heat and pressure, natural crystals possess an immutable, orderly atomic lattice. When introduced to our bio-magnetic field, they act as stable tuning forks—entraining our fluctuating vibrations back to harmony.",
-      "Rather than choosing generic stones based on guesswork, Dr. Srushti offers an intentional, personalized crystal prescription based on your astrological blueprint, current challenges, and personal manifestation goals."
-    ],
-    benefits: [
-      {
-        title: "Authentic Earth Frequency",
-        description: "100% genuine, ethically sourced, unheated natural stones with verifiable energetic potency."
-      },
-      {
-        title: "Customized Stone Prescription",
-        description: "Gemstones matched specifically to your astrological planetary periods, chakras, and aspirations."
-      },
-      {
-        title: "Consecrated & Blessed",
-        description: "Every crystal is cleansed under moonlight, smudged with sacred herbs, and energetically activated by Dr. Srushti."
-      },
-      {
-        title: "Sacred Space Harmonization",
-        description: "Clear guidelines on placing stones in your home or office to transmute negative environmental stress."
-      }
-    ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Vibrational Assessment",
-        description: "We understand your personal challenges, current life goals, and emotional/spiritual needs."
-      },
-      {
-        step: "02",
-        title: "Intuitive Gemstone Selection",
-        description: "Dr. Srushti handpicks specific crystals—bracelets, raw clusters, tumbles, or sacred spheres—attuned to you."
-      },
-      {
-        step: "03",
-        title: "Consecration & Cleansing Ritual",
-        description: "Each chosen piece undergoes authentic Vedic cleansing, moonlight charging, and energetic programming."
-      },
-      {
-        step: "04",
-        title: "Care Guide & Safe Dispatch",
-        description: "Delivered securely to your doorstep across India, accompanied by personalized usage and recharging rituals."
-      }
-    ],
-    whoIsThisFor: [
-      "Seekers looking for authentic, natural crystals without fear of counterfeit or dyed imitations",
-      "Individuals wanting energetic protection against negative eyes (Nazar), stress, or psychic drain",
-      "Professionals and business owners seeking stones for prosperity, mental focus, and confidence",
-      "Anyone desiring a tangible, sacred daily reminder of their highest spiritual intentions"
+      "Formed over millions of years through the natural forces of the Earth, crystals are treasured for their unique structures and their significance in holistic healing. In the world of energy healing, crystals are believed to hold their own vibrational energy and interact with the subtle energies around us.",
+      "They are used to absorb, store, focus and channel energy, supporting our journey towards emotional balance, inner healing and manifestation. Beyond their beauty, crystals can serve as powerful tools for self-awareness, helping us recognise limiting beliefs, recurring patterns and emotional blocks that may be holding us back.",
+      "At Bespoke Healer, we believe crystals can be meaningful companions on your journey of healing, transformation and intentional living — helping you reconnect with yourself and create space for the life you wish to manifest."
     ],
     whatIsIncluded: [
       "Personalized 1-on-1 crystal guidance consultation with Dr. Srushti Garg",
-      "Handpicked selection of consecrated natural gemstones attuned to your blueprint",
       "Step-by-step guidebook on how to cleanse, recharge, and wear your stones",
       "Secure, protective luxury packaging dispatched with tracking across India",
       "Direct guidance on crystal placement for home, bedroom, and workstation"

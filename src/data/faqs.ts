@@ -17,7 +17,7 @@ export const faqsData: FAQItem[] = [
     id: "faq-session-3",
     category: "sessions",
     question: "Can sessions be conducted online or remotely?",
-    answer: "Energetic resonance and clarity transcend physical distance with identical potency."
+    answer: "Yes, Zoom or Google meet link will be shared before the session."
   },
   {
     id: "faq-session-4",

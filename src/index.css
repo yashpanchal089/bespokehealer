@@ -105,3 +105,26 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #D380B8;
 }
+
+/* True Continuous Rolling Seamless Infinite Marquee Loop */
+@keyframes marquee-track-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  animation: marquee-track-loop 24s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .animate-marquee-track {
+  animation-play-state: paused;
+}

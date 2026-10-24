@@ -69,9 +69,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
             {currentService.name}
           </h1>
 
-          <p className="font-editorial text-xl sm:text-2xl text-mutedPurple italic font-normal">
-            {currentService.subtitle || currentService.shortDescription}
-          </p>
+          {(currentService.subtitle || currentService.shortDescription) && (
+            <p className="font-editorial text-xl sm:text-2xl text-mutedPurple italic font-normal">
+              {currentService.subtitle || currentService.shortDescription}
+            </p>
+          )}
 
           <p className="text-sm sm:text-base text-brandLightText font-light leading-relaxed max-w-2xl mx-auto">
             {currentService.tagline || currentService.description}
@@ -142,7 +144,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                 <span>✦ The Philosophy & Essence</span>
               </div>
               <h2 className="font-editorial text-3xl sm:text-4xl text-brandText font-normal">
-                How this session transforms your energy
+                {currentService.philosophyTitle || (isCrystals ? "What are Crystals?" : "How this session transforms your energy")}
               </h2>
 
               <div className="space-y-4 text-sm sm:text-base text-brandLightText font-light leading-relaxed">

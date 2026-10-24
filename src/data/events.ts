@@ -1,65 +1,37 @@
 import corporatePhoto from '../assets/corporate-events.jpg';
-
-export interface EventOffering {
-  id: string;
-  type: 'corporate' | 'wedding';
-  tag: string;
-  title: string;
-  subtitle: string;
-  points: string[];
-}
+import terracePhoto from '../assets/corporate-event-terrace.jpg';
+import eventGuest1 from '../assets/event-tarot-guest-1.png';
+import eventGuest2 from '../assets/event-tarot-guest-2.png';
 
 export interface EventGalleryPhoto {
   id: string;
   image: string;
-  title: string;
-  eventCategory: string;
-  tag: string;
+  alt: string;
+  title?: string;
+  eventCategory?: string;
+  tag?: string;
+  description?: string;
 }
-
-export const corporateAndWeddingOfferings: EventOffering[] = [
-  {
-    id: "corporate-wellness",
-    type: "corporate",
-    tag: "✦ Corporate & Institutional",
-    title: "Executive Summits & Symposia",
-    subtitle: "Intuitive leadership, keynote talks & organizational wellness.",
-    points: [
-      "Keynote speaking & national symposia contributions",
-      "Executive burnout release & pranic breathwork",
-      "Intuitive decision-making workshops for leadership",
-      "Interactive group sound & energy harmonization"
-    ]
-  },
-  {
-    id: "wedding-celebrations",
-    type: "wedding",
-    tag: "✦ Luxury Celebrations",
-    title: "Bespoke Weddings & Sangeet",
-    subtitle: "High-vibe spiritual elegance for unforgettable celebrations.",
-    points: [
-      "Experiential bridal tarot lounges for cocktails & sangeet",
-      "Private bridal suite calming & energetic alignment",
-      "Curated consecrated crystal wedding favors",
-      "Couples aura cleansing & sacred blessings"
-    ]
-  }
-];
 
 export const eventGalleryPhotos: EventGalleryPhoto[] = [
   {
-    id: "samarpanam-25",
+    id: "event-guest-tarot-1",
+    image: eventGuest1,
+    alt: "Corporate & Event Tarot Card Reading Session with Guest"
+  },
+  {
+    id: "event-guest-tarot-2",
+    image: eventGuest2,
+    alt: "Private Event Tarot Booth and Reading Experience"
+  },
+  {
+    id: "wedding-celebrations-terrace",
+    image: terracePhoto,
+    alt: "Dr. Srushti Garg Tarot & Crystal Healing Event Setup"
+  },
+  {
+    id: "samarpanam-corporate",
     image: corporatePhoto,
-    title: "Samarpanam '25 National Healthcare Symposium",
-    eventCategory: "Corporate & Institutional",
-    tag: "Speaker & Healthcare Contributor"
+    alt: "National Healthcare Symposium Corporate Speaker"
   }
-  // To add more photos later, simply append new objects here:
-  // {
-  //   id: "event-2",
-  //   image: yourNewPhotoImport,
-  //   title: "Destination Wedding Tarot Lounge",
-  //   eventCategory: "Weddings & Celebrations",
-  //   tag: "Udaipur Wedding"
-  // }
 ];
