@@ -1,7 +1,7 @@
 import corporatePhoto from '../assets/corporate-events.jpg';
-import terracePhoto from '../assets/corporate-event-terrace.jpg';
-import eventGuest1 from '../assets/event-tarot-guest-1.png';
+import eventGathering1 from '../assets/event-gathering-1.jpg';
 import eventGuest2 from '../assets/event-tarot-guest-2.png';
+import eventTarotSession from '../assets/event-tarot-session.jpg';
 
 export interface EventGalleryPhoto {
   id: string;
@@ -15,9 +15,9 @@ export interface EventGalleryPhoto {
 
 export const eventGalleryPhotos: EventGalleryPhoto[] = [
   {
-    id: "event-guest-tarot-1",
-    image: eventGuest1,
-    alt: "Corporate & Event Tarot Card Reading Session with Guest"
+    id: "event-gathering-1",
+    image: eventGathering1,
+    alt: "Dr. Srushti Garg with Guests at Sacred Gathering & Event"
   },
   {
     id: "event-guest-tarot-2",
@@ -25,9 +25,9 @@ export const eventGalleryPhotos: EventGalleryPhoto[] = [
     alt: "Private Event Tarot Booth and Reading Experience"
   },
   {
-    id: "wedding-celebrations-terrace",
-    image: terracePhoto,
-    alt: "Dr. Srushti Garg Tarot & Crystal Healing Event Setup"
+    id: "event-tarot-session-live",
+    image: eventTarotSession,
+    alt: "Dr. Srushti Garg Live Event Tarot Reading Session"
   },
   {
     id: "samarpanam-corporate",
