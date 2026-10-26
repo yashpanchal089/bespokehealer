@@ -45,8 +45,8 @@ export const getWhatsAppUrl = (customMessage?: string) => {
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
 
-export const getProductWhatsAppUrl = (productName: string) => {
-  const message = `Hi ${siteConfig.founderName} 👋\nI saw the ${productName} on the Bespoke Healer website and I'm interested in it.\nCould you please share the price and availability?`;
+export const getProductWhatsAppUrl = (productName: string, customMessage?: string) => {
+  const message = customMessage || `Hi ${siteConfig.founderName} 👋\nI would like to order the ${productName} from the Bespoke Healer website.\nPlease share order & delivery details.`;
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
 

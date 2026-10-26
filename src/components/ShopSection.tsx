@@ -80,10 +80,10 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
               transition={{ duration: 0.6, delay: (idx % 4) * 0.1 }}
               className="group flex flex-col justify-between rounded-3xl overflow-hidden bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-xl transition-all duration-500 glass-card-hover"
             >
-              {/* Product Visual Container */}
+              {/* Product Visual Container - Increased Image Size */}
               <div
                 onClick={() => setActiveProduct(product)}
-                className="relative aspect-square w-full overflow-hidden bg-warmBeige cursor-pointer"
+                className="relative aspect-[4/5] w-full overflow-hidden bg-warmBeige cursor-pointer"
               >
                 <img
                   src={product.image}
@@ -92,66 +92,57 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
                 />
                 
                 {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-warmBeige/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-warmBeige/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
 
                 {/* Subcategory Pill */}
-                <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-semibold uppercase tracking-wider text-brandText border border-secondaryPurple/30 shadow-sm">
+                <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md text-[9px] font-semibold uppercase tracking-wider text-brandText border border-secondaryPurple/30 shadow-sm">
                   {product.categoryLabel}
                 </span>
 
                 {/* Hover Quick Action Badge */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brandText/15 backdrop-blur-[2px]">
-                  <span className="px-4 py-2 rounded-full bg-softCream text-xs font-semibold uppercase tracking-wider text-brandText shadow-lg flex items-center gap-1.5">
+                  <span className="px-3.5 py-1.5 rounded-full bg-softCream text-xs font-semibold uppercase tracking-wider text-brandText shadow-lg flex items-center gap-1.5">
                     <span>Quick View</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
 
-              {/* Product Info */}
-              <div className="p-5 sm:p-6 flex flex-col justify-between flex-1 space-y-3">
+              {/* Product Info - Compact White Box */}
+              <div className="p-4 sm:p-4.5 flex flex-col justify-between flex-1 space-y-2.5">
                 <div className="space-y-1">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-[10px] tracking-widest uppercase text-mutedPurple font-mono">
-                      {product.subcategory || "Curated"}
-                    </span>
-                    {product.price && (
-                      <span className="font-editorial text-lg font-semibold text-brandText">
-                        {product.price}
-                      </span>
-                    )}
-                  </div>
-
                   <h3
                     onClick={() => setActiveProduct(product)}
-                    className="font-editorial text-xl sm:text-2xl text-brandText font-normal cursor-pointer hover:text-mutedPurple transition-colors leading-tight"
+                    className="font-editorial text-lg sm:text-xl text-brandText font-normal cursor-pointer hover:text-mutedPurple transition-colors leading-tight truncate"
+                    title={product.name}
                   >
                     {product.name}
                   </h3>
 
-                  <p className="text-xs text-brandLightText font-light line-clamp-2 leading-relaxed">
+                  {product.price && (
+                    <div className="font-editorial text-xl sm:text-2xl font-semibold text-brandText leading-tight">
+                      {product.price}
+                    </div>
+                  )}
+
+                  <p 
+                    className="text-[11px] sm:text-xs text-brandLightText font-light truncate leading-normal"
+                    title={product.shortDescription}
+                  >
                     {product.shortDescription}
                   </p>
                 </div>
 
                 {/* Card Action Row */}
-                <div className="pt-3 border-t border-secondaryPurple/25 flex items-center justify-between">
-                  <button
-                    onClick={() => setActiveProduct(product)}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-mutedPurple hover:text-brandText transition-colors"
-                  >
-                    <span>View Details</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-
+                <div className="pt-2 border-t border-secondaryPurple/25">
                   <a
-                    href={getProductWhatsAppUrl(product.name)}
+                    href={getProductWhatsAppUrl(product.name, product.whatsappMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Enquire about ${product.name} on WhatsApp`}
-                    className="p-2 rounded-full bg-lightLavender/80 hover:bg-[#25D366] hover:text-white text-brandText transition-all duration-300"
+                    className="w-full py-2.5 px-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-1.5"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <MessageCircle className="w-4 h-4 fill-current shrink-0" />
+                    <span>Order on WhatsApp</span>
                   </a>
                 </div>
               </div>

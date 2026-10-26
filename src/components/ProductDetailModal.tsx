@@ -11,7 +11,7 @@ interface ProductDetailModalProps {
 export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product, onClose }) => {
   if (!product) return null;
 
-  const whatsappLink = getProductWhatsAppUrl(product.name);
+  const whatsappLink = getProductWhatsAppUrl(product.name, product.whatsappMessage);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brandText/40 backdrop-blur-md animate-fadeIn">
@@ -46,10 +46,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
         <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
           <div className="space-y-4">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-mutedPurple flex items-center gap-1.5">
-                <Sparkles className="w-3 h-3" />
-                {product.subcategory || "Curated Essential"}
-              </span>
+              {product.subcategory && (
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-mutedPurple flex items-center gap-1.5">
+                  <Sparkles className="w-3 h-3" />
+                  {product.subcategory}
+                </span>
+              )}
               <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal mt-1">
                 {product.name}
               </h3>
@@ -85,7 +87,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
               className="w-full py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
-              <span>Enquire on WhatsApp</span>
+              <span>Order on WhatsApp</span>
             </a>
 
             <p className="text-[10px] text-center text-brandLightText font-light">

@@ -25,6 +25,127 @@ export const productCategories = [
 ] as const;
 
 export const productsData: Product[] = [
+  // --- FEATURED BRACELET ---
+  {
+    id: "bracelet-love-focus",
+    name: "Love & Focus Bracelet",
+    slug: "love-focus-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/love-focus-bracelet.jpg",
+    gallery: [
+      "/love-focus-bracelet.jpg"
+    ],
+    shortDescription: "Rose quartz, Clear quartz & Amethyst",
+    description: "Rose quartz, Clear quartz & Amethyst",
+    price: "550/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Love & Focus Bracelet (550/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-love",
+    name: "Love Bracelet",
+    slug: "love-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/love-bracelet.jpg",
+    gallery: [
+      "/love-bracelet.jpg"
+    ],
+    shortDescription: "Rose quartz",
+    description: "Rose quartz",
+    price: "800/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Love Bracelet (800/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-amethyst",
+    name: "Amethyst Bracelet",
+    slug: "amethyst-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/amethyst-bracelet.jpg",
+    gallery: [
+      "/amethyst-bracelet.jpg"
+    ],
+    shortDescription: "Amethyst",
+    description: "Amethyst",
+    price: "450/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Amethyst Bracelet (450/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-clear-quartz",
+    name: "Clear Quartz Bracelet",
+    slug: "clear-quartz-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/clear-quartz-bracelet.jpg",
+    gallery: [
+      "/clear-quartz-bracelet.jpg"
+    ],
+    shortDescription: "Clear quartz",
+    description: "Clear quartz",
+    price: "550/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Clear Quartz Bracelet (550/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-citrine",
+    name: "Citrine Bracelet",
+    slug: "citrine-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/citrine-bracelet.jpg",
+    gallery: [
+      "/citrine-bracelet.jpg"
+    ],
+    shortDescription: "Citrine",
+    description: "Citrine",
+    price: "400/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Citrine Bracelet (400/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-sulemani-hakik",
+    name: "Sulemani Hakik Bracelet",
+    slug: "sulemani-hakik-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/sulemani-hakik-bracelet.jpg",
+    gallery: [
+      "/sulemani-hakik-bracelet.jpg"
+    ],
+    shortDescription: "Protection",
+    description: "Sulemani hakik bracelet for protection",
+    price: "650/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Sulemani Hakik Bracelet (650/-). Please share order and delivery details."
+  },
+  {
+    id: "bracelet-money-magnet",
+    name: "Money Magnet Bracelet",
+    slug: "money-magnet-bracelet",
+    category: "bracelets",
+    categoryLabel: "Bracelets",
+    image: "/money-magnet-bracelet.jpg",
+    gallery: [
+      "/money-magnet-bracelet.jpg"
+    ],
+    shortDescription: "Garnet & Malachite",
+    description: "Garnet & Malachite Bracelet",
+    price: "1250/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Money Magnet Bracelet (1250/-). Please share order and delivery details."
+  },
+
   // --- BATH SALTS ---
   {
     id: "salt-love",
@@ -208,44 +329,6 @@ export const productsData: Product[] = [
     availability: "In Stock",
     featured: false,
     whatsappMessage: "Hi Dr. Srushti 👋 I saw the Raw Black Tourmaline Shield on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-
-  // --- BRACELETS ---
-  {
-    id: "bracelet-triple-protection",
-    name: "Triple Protection Energy Bracelet",
-    slug: "triple-protection-energy-bracelet",
-    category: "bracelets",
-    categoryLabel: "Bracelets",
-    subcategory: "Talisman Bracelet",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Harmonious synergy of Golden Tiger's Eye, Black Obsidian and grounding Hematite beads.",
-    description: "Strung on durable stretch cord. Enhances focus, keeps your auric field secure in crowded spaces, and bolsters inner tenacity during high-pressure ventures.",
-    price: "₹1,150",
-    availability: "In Stock",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Triple Protection Energy Bracelet on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "bracelet-7-chakra",
-    name: "7 Chakra Alignment Bracelet",
-    slug: "7-chakra-alignment-bracelet",
-    category: "bracelets",
-    categoryLabel: "Bracelets",
-    subcategory: "Holistic Harmony",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Seven distinct natural gemstones corresponding to the human body's prime energy vortices.",
-    description: "From Root to Crown: Red Jasper, Carnelian, Tiger's Eye, Green Aventurine, Turquoise, Lapis Lazuli, and Amethyst with lava stone diffuser beads.",
-    price: "₹1,250",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the 7 Chakra Alignment Bracelet on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
   },
 
   // --- WALL HANGINGS ---
