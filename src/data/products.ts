@@ -182,6 +182,25 @@ export const productsData: Product[] = [
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Peppermint & Eucalyptus Bath Salt 200/- (250gms). Please share order and delivery details."
   },
 
+  // --- GEODES, CLUSTERS & MORE ---
+  {
+    id: "geode-wish-cave",
+    name: "Wish Cave",
+    slug: "wish-cave",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/wish-cave.jpg",
+    gallery: [
+      "/wish-cave.jpg"
+    ],
+    shortDescription: "Wish cave",
+    description: "Wish cave",
+    price: "1000/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Wish Cave (1000/-). Please share order and delivery details."
+  },
+
   // --- WALL HANGINGS ---
   {
     id: "hanging-7-chakra-raw",
