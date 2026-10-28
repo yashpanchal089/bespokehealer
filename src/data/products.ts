@@ -181,42 +181,6 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Peppermint & Eucalyptus Bath Salt 200/- (250gms). Please share order and delivery details."
   },
-  {
-    id: "salt-nazar",
-    name: "Nazar Protection Salt",
-    slug: "nazar-protection-salt",
-    category: "bath-salts",
-    categoryLabel: "Bath Salts",
-    subcategory: "Auric Shield",
-    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Black Hawaiian mineral salt, camphor and wild sage to dissolve psychic residue.",
-    description: "Ancient Vedic and esoteric botanical blend to dispel the evil eye (Nazar), heavy environmental energies, and psychic exhaustion after public engagements.",
-    price: "₹950",
-    availability: "In Stock",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Nazar Protection Salt on the Bespoke Healer website and I'm interested in it. Could you please share the details?"
-  },
-  {
-    id: "salt-daily-detox",
-    name: "Daily Detox Bath Salt",
-    slug: "daily-detox-bath-salt",
-    category: "bath-salts",
-    categoryLabel: "Bath Salts",
-    subcategory: "Purification Soak",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Pure dead sea minerals, rosemary and uplifting bergamot for everyday energetic renewal.",
-    description: "A refreshing foot or body soak that resets your subtle biofield every evening. Clears sluggishness and revitalizes cellular vitality.",
-    price: "₹750",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Daily Detox Bath Salt on the Bespoke Healer website and I'm interested in it. Could you please share the details?"
-  },
 
   // --- CRYSTALS ---
   {
