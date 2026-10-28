@@ -200,6 +200,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Wish Cave (1000/-). Please share order and delivery details."
   },
+  {
+    id: "geode-amethyst",
+    name: "Amethyst",
+    slug: "amethyst-cluster",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/amethyst-cluster.jpg",
+    gallery: [
+      "/amethyst-cluster.jpg"
+    ],
+    shortDescription: "Amethyst (305gms)",
+    description: "Amethyst (305gms)",
+    price: "1677/- (305gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Amethyst 1677/- (305gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
