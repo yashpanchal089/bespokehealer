@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: 'bath-salts' | 'crystals' | 'bracelets' | 'wall-hangings' | 'decor';
+  category: 'bath-salts' | 'bracelets' | 'wall-hangings' | 'decor';
   categoryLabel: string;
   subcategory?: string;
   image: string;
@@ -18,7 +18,6 @@ export interface Product {
 export const productCategories = [
   { id: 'all', label: 'All Creations' },
   { id: 'bath-salts', label: 'Bath Salts' },
-  { id: 'crystals', label: 'Crystals' },
   { id: 'bracelets', label: 'Bracelets' },
   { id: 'wall-hangings', label: 'Wall Hangings' },
   { id: 'decor', label: 'Sacred Décor' },
@@ -180,116 +179,6 @@ export const productsData: Product[] = [
     availability: "In Stock",
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Peppermint & Eucalyptus Bath Salt 200/- (250gms). Please share order and delivery details."
-  },
-
-  // --- CRYSTALS ---
-  {
-    id: "crystal-amethyst",
-    name: "Natural Amethyst Cluster",
-    slug: "natural-amethyst-cluster",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Crown & Third Eye",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "High-frequency violet crystal for serene meditation and spiritual clarity.",
-    description: "Deep natural Uruguayan amethyst formation. Radiates calm energy across your bedside or meditation sanctuary to prevent restlessness and soothe mental clutter.",
-    price: "₹1,450",
-    availability: "In Stock",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Natural Amethyst Cluster on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "crystal-rose-quartz",
-    name: "Rose Quartz Heart Sphere",
-    slug: "rose-quartz-heart-sphere",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Heart Chakra",
-    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "The master stone of unconditional affection, gentle forgiveness and inner peace.",
-    description: "Velvety translucent pink gemstone lovingly carved into a sphere of pure harmony. Invites soft relationship communication and tender self-compassion.",
-    price: "₹1,200",
-    availability: "In Stock",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Rose Quartz Heart Sphere on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "crystal-clear-quartz",
-    name: "Clear Quartz Master Tower",
-    slug: "clear-quartz-master-tower",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Universal Amplifier",
-    image: "https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1520697830682-bbb6e85e2b0b?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Pristine six-sided generator tower for intention programming and energy elevation.",
-    description: "Known in esoteric lore as the Supreme Healer. Amplifies the energetic vibrations of surrounding stones and channels lucid focus throughout your workspace.",
-    price: "₹1,650",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Clear Quartz Master Tower on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "crystal-selenite-plate",
-    name: "Selenite Charging Plate",
-    slug: "selenite-charging-plate",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Purification Base",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Silky pearlescent gypsum plate to naturally cleanse and recharge all your gemstones.",
-    description: "Selenite holds liquid light frequency that never requires cleansing itself. Simply rest your jewelry and tumbled stones overnight on this disk to restore their native brilliance.",
-    price: "₹1,350",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Selenite Charging Plate on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "crystal-citrine-point",
-    name: "Natural Citrine Abundance Point",
-    slug: "natural-citrine-abundance-point",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Solar Plexus & Abundance",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "The premier merchant's stone for financial vitality, confidence and joyful prosperity.",
-    description: "Golden honey hues reflecting the radiance of the morning sun. Stimulates willpower, breaks scarcity mindsets, and draws fortuitous synchronicities.",
-    price: "₹1,800",
-    availability: "In Stock",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Natural Citrine Abundance Point on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "crystal-black-tourmaline",
-    name: "Raw Black Tourmaline Shield",
-    slug: "raw-black-tourmaline-shield",
-    category: "crystals",
-    categoryLabel: "Crystals",
-    subcategory: "Root Chakra",
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Dense grounding talisman against electromagnetic radiation and negative atmospheric weight.",
-    description: "Essential anchor for modern homes. Keep near Wi-Fi routers, home offices, or main entryways to create a steadfast energetic perimeter.",
-    price: "₹950",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Raw Black Tourmaline Shield on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
   },
 
   // --- WALL HANGINGS ---
