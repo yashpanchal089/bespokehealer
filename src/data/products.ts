@@ -165,22 +165,21 @@ export const productsData: Product[] = [
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Rose Bath Salt 200/- (250gms). Please share order and delivery details."
   },
   {
-    id: "salt-stress-release",
-    name: "Stress Release Bath Salt",
-    slug: "stress-release-bath-salt",
+    id: "salt-peppermint-eucalyptus",
+    name: "Peppermint & Eucalyptus Bath Salt",
+    slug: "peppermint-eucalyptus-bath-salt",
     category: "bath-salts",
     categoryLabel: "Bath Salts",
-    subcategory: "Restorative Soak",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=900&auto=format&fit=crop",
+    image: "/peppermint-eucalyptus-bath-salt.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=900&auto=format&fit=crop"
+      "/peppermint-eucalyptus-bath-salt.jpg"
     ],
-    shortDescription: "Epsom magnesium crystals, lavender blooms and French chamomile to quiet the mind.",
-    description: "Designed for exhausted nervous systems. Melts physical muscular tension and encourages restorative deep sleep following demanding days.",
-    price: "₹850",
+    shortDescription: "Enhances mental clarity & relieves stress",
+    description: "Enhances mental clarity & relieves stress",
+    price: "200/- (250gms)",
     availability: "In Stock",
     featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Stress Release Bath Salt on the Bespoke Healer website and I'm interested in it. Could you please share the details?"
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Peppermint & Eucalyptus Bath Salt 200/- (250gms). Please share order and delivery details."
   },
   {
     id: "salt-nazar",
