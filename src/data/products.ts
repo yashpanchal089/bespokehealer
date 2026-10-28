@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: 'bath-salts' | 'bracelets' | 'wall-hangings' | 'decor';
+  category: 'bath-salts' | 'bracelets' | 'geodes-clusters' | 'wall-hangings' | 'decor';
   categoryLabel: string;
   subcategory?: string;
   image: string;
@@ -19,6 +19,7 @@ export const productCategories = [
   { id: 'all', label: 'All Creations' },
   { id: 'bath-salts', label: 'Bath Salts' },
   { id: 'bracelets', label: 'Bracelets' },
+  { id: 'geodes-clusters', label: 'Geodes, Clusters & More' },
   { id: 'wall-hangings', label: 'Wall Hangings' },
   { id: 'decor', label: 'Sacred Décor' },
 ] as const;
