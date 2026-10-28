@@ -148,23 +148,21 @@ export const productsData: Product[] = [
 
   // --- BATH SALTS ---
   {
-    id: "salt-love",
-    name: "Love Bath Salt",
-    slug: "love-bath-salt",
+    id: "salt-rose",
+    name: "Rose Bath Salt",
+    slug: "rose-bath-salt",
     category: "bath-salts",
     categoryLabel: "Bath Salts",
-    subcategory: "Botanical Soak",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop",
+    image: "/rose-bath-salt.png",
     gallery: [
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=900&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1608248597359-009b0b410f9d?q=80&w=900&auto=format&fit=crop"
+      "/rose-bath-salt.png"
     ],
-    shortDescription: "Organic rose petals, Himalayan pink salt and wild jasmine for unconditional self-love.",
-    description: "Formulated to soften heart walls and replenish emotional reservoir. Infused with therapeutic grade rose geranium essence and consecrated rose quartz vibrational resonance.",
-    price: "₹850",
+    shortDescription: "Brings emotional peace • Infused with vitamin E",
+    description: "Brings emotional peace • Infused with vitamin E",
+    price: "200/- (250gms)",
     availability: "In Stock",
     featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Love Bath Salt on the Bespoke Healer website and I'm interested in it. Could you please share the details?"
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Rose Bath Salt 200/- (250gms). Please share order and delivery details."
   },
   {
     id: "salt-stress-release",
