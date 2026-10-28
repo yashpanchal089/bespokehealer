@@ -234,6 +234,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Citrine 1176/- (168gms). Please share order and delivery details."
   },
+  {
+    id: "geode-amethyst-264g",
+    name: "Amethyst",
+    slug: "amethyst-geode-264g",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/amethyst-geode-264g.jpg",
+    gallery: [
+      "/amethyst-geode-264g.jpg"
+    ],
+    shortDescription: "Amethyst (264gms)",
+    description: "Amethyst (264gms)",
+    price: "1056/- (264gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Amethyst 1056/- (264gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
