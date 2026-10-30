@@ -130,8 +130,8 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             animate="visible"
             className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-7"
           >
-            {/* Animated Brand Eyebrow with shimmer effect */}
-            <motion.div variants={itemFadeUp} className="relative overflow-hidden">
+            {/* Animated Brand Eyebrow with shimmer effect (Desktop only - on mobile it appears above portrait) */}
+            <motion.div variants={itemFadeUp} className="relative overflow-hidden hidden lg:block">
               <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DCEF]/70 border border-[#E5A8CE]/60 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#40383F] shadow-xs">
                 <motion.span
                   animate={{ rotate: [0, 180, 360] }}
@@ -284,80 +284,108 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           </motion.div>
 
           {/* ================= PORTRAIT COLUMN: Dr. Srushti Garg (Order 1 on mobile, Order 2 on desktop) ================= */}
-          <div className="lg:col-span-5 order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-6 lg:mb-0 mt-2 lg:mt-0">
-
-            {/* Sacred Halo Rotating Geometry Rings (Preserved as requested: "behind circle is good. keep this") */}
+          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center justify-center mb-4 sm:mb-6 lg:mb-0 mt-2 lg:mt-0">
+            {/* Mobile Only: Brand Eyebrow Badge shifted above Dr. Srushti's Portrait Image */}
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
-              className="absolute w-[280px] xs:w-[340px] sm:w-[460px] h-[280px] xs:h-[340px] sm:h-[460px] rounded-full border border-[#E5A8CE]/45 pointer-events-none"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="lg:hidden mb-4 sm:mb-5 relative overflow-hidden z-20"
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#D380B8] shadow-sm shadow-[#D380B8]" />
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-[#E5A8CE]" />
-            </motion.div>
-
-            {/* Counter-rotating Dashed Aura Ring */}
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
-              className="absolute w-[240px] xs:w-[290px] sm:w-[390px] h-[240px] xs:h-[290px] sm:h-[390px] rounded-full border border-dashed border-[#D380B8]/35 pointer-events-none"
-            />
-
-            {/* Radiant Breathing Rose-Lavender Aura */}
-            <motion.div
-              animate={{ scale: [1, 1.1, 1], opacity: [0.55, 0.8, 0.55] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -inset-6 rounded-full bg-gradient-to-tr from-[#E7DCEF]/85 via-[#F5C6D6]/45 to-transparent filter blur-3xl -z-10"
-            />
-
-            {/* ================= CALM, GROUNDED LUXURY PORTRAIT (ZERO SHAKING / ZERO EARTHQUAKE) ================= */}
-            <div
-              className="relative w-full max-w-[290px] xs:max-w-[340px] sm:max-w-[400px] aspect-[4/5] rounded-[2.2rem] sm:rounded-[2.8rem] overflow-hidden shadow-2xl border-2 border-[#E5A8CE]/65 bg-[#FBF8F3] group transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(211,128,184,0.35)]"
-            >
-              {/* Dr. Srushti Garg Real Authentic Portrait with Gentle Calm Hover */}
-              <img
-                src={srushtiClientPhoto}
-                alt="Dr. Srushti Garg — Bespoke Healer Founder & Spiritual Guide"
-                className="w-full h-full object-cover object-top filter contrast-[1.02] brightness-[1.01] transition-transform duration-700 ease-out group-hover:scale-104 select-none"
-              />
-
-              {/* Gentle Feathered Gradient Overlay to blend harmoniously */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2F212B]/75 via-transparent to-transparent opacity-80 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#F5EFE6]/15 via-transparent to-transparent pointer-events-none" />
-
-              {/* Dynamic Studio Sheen Gliding Across Portrait Every 2.5-3 Seconds */}
-              <motion.div
-                animate={{ x: ['-180%', '280%'] }}
-                transition={{
-                  duration: 2.4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  repeatDelay: 2.5,
-                }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none z-10"
-              />
-
-              {/* Serene Glass Card with Founder Credentials */}
-              <div
-                className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 glass-card px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl border border-white/70 shadow-lg flex items-center justify-between z-20 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1"
-              >
-                <div className="min-w-0 pr-2">
-                  <p className="font-editorial text-base sm:text-xl text-[#2B2329] font-semibold leading-tight flex items-center gap-1.5 truncate">
-                    {siteConfig.founderName}
-                    <span className="text-[#D380B8] text-xs inline-block shrink-0">✦</span>
-                  </p>
-                  <p className="text-[10px] sm:text-xs text-[#D380B8] font-medium tracking-wide mt-0.5 truncate">
-                    Tarot Card Reader • Energy Healer • Crystals
-                  </p>
-                </div>
-
-                <div
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#F8EBF4] flex items-center justify-center text-[#D380B8] shadow-inner font-serif shrink-0 text-xs sm:text-base"
+              <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DCEF]/70 border border-[#E5A8CE]/60 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#40383F] shadow-xs">
+                <motion.span
+                  animate={{ rotate: [0, 180, 360] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  className="text-[#D380B8] inline-block"
                 >
                   ✦
-                </div>
-              </div>
+                </motion.span>
+                <span>Bespoke Healer • Dr. Srushti Garg</span>
 
+                {/* Shimmer reflection sweep */}
+                <motion.div
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 2 }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 pointer-events-none"
+                />
+              </div>
+            </motion.div>
+
+            {/* Portrait Image Container with Centered Sacred Halo */}
+            <div className="relative flex items-center justify-center w-full">
+              {/* Sacred Halo Rotating Geometry Rings (Preserved as requested: "behind circle is good. keep this") */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: 'linear' }}
+                className="absolute w-[280px] xs:w-[340px] sm:w-[460px] h-[280px] xs:h-[340px] sm:h-[460px] rounded-full border border-[#E5A8CE]/45 pointer-events-none"
+              >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#D380B8] shadow-sm shadow-[#D380B8]" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-[#E5A8CE]" />
+              </motion.div>
+
+              {/* Counter-rotating Dashed Aura Ring */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+                className="absolute w-[240px] xs:w-[290px] sm:w-[390px] h-[240px] xs:h-[290px] sm:h-[390px] rounded-full border border-dashed border-[#D380B8]/35 pointer-events-none"
+              />
+
+              {/* Radiant Breathing Rose-Lavender Aura */}
+              <motion.div
+                animate={{ scale: [1, 1.1, 1], opacity: [0.55, 0.8, 0.55] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute -inset-6 rounded-full bg-gradient-to-tr from-[#E7DCEF]/85 via-[#F5C6D6]/45 to-transparent filter blur-3xl -z-10"
+              />
+
+              {/* ================= CALM, GROUNDED LUXURY PORTRAIT (ZERO SHAKING / ZERO EARTHQUAKE) ================= */}
+              <div
+                className="relative w-full max-w-[290px] xs:max-w-[340px] sm:max-w-[400px] aspect-[4/5] rounded-[2.2rem] sm:rounded-[2.8rem] overflow-hidden shadow-2xl border-2 border-[#E5A8CE]/65 bg-[#FBF8F3] group transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(211,128,184,0.35)]"
+              >
+                {/* Dr. Srushti Garg Real Authentic Portrait with Gentle Calm Hover */}
+                <img
+                  src={srushtiClientPhoto}
+                  alt="Dr. Srushti Garg — Bespoke Healer Founder & Spiritual Guide"
+                  className="w-full h-full object-cover object-top filter contrast-[1.02] brightness-[1.01] transition-transform duration-700 ease-out group-hover:scale-104 select-none"
+                />
+
+                {/* Gentle Feathered Gradient Overlay to blend harmoniously */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2F212B]/75 via-transparent to-transparent opacity-80 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#F5EFE6]/15 via-transparent to-transparent pointer-events-none" />
+
+                {/* Dynamic Studio Sheen Gliding Across Portrait Every 2.5-3 Seconds */}
+                <motion.div
+                  animate={{ x: ['-180%', '280%'] }}
+                  transition={{
+                    duration: 2.4,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    repeatDelay: 2.5,
+                  }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none z-10"
+                />
+
+                {/* Serene Glass Card with Founder Credentials */}
+                <div
+                  className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 glass-card px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl border border-white/70 shadow-lg flex items-center justify-between z-20 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1"
+                >
+                  <div className="min-w-0 pr-2">
+                    <p className="font-editorial text-base sm:text-xl text-[#2B2329] font-semibold leading-tight flex items-center gap-1.5 truncate">
+                      {siteConfig.founderName}
+                      <span className="text-[#D380B8] text-xs inline-block shrink-0">✦</span>
+                    </p>
+                    <p className="text-[10px] sm:text-xs text-[#D380B8] font-medium tracking-wide mt-0.5 truncate">
+                      Tarot Card Reader • Energy Healer • Crystals
+                    </p>
+                  </div>
+
+                  <div
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#F8EBF4] flex items-center justify-center text-[#D380B8] shadow-inner font-serif shrink-0 text-xs sm:text-base"
+                  >
+                    ✦
+                  </div>
+                </div>
+
+              </div>
             </div>
 
           </div>
