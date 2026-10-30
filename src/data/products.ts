@@ -285,6 +285,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Black Tourmaline 300/- (100gms). Please share order and delivery details."
   },
+  {
+    id: "geode-raw-rose-quartz-114g",
+    name: "Raw Rose Quartz",
+    slug: "raw-rose-quartz-114g",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/raw-rose-quartz-114g.jpg",
+    gallery: [
+      "/raw-rose-quartz-114g.jpg"
+    ],
+    shortDescription: "Raw Rose Quartz (114gms)",
+    description: "Raw Rose Quartz (114gms)",
+    price: "565/- (114gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Raw Rose Quartz 565/- (114gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
