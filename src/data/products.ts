@@ -319,6 +319,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Amethyst 1375/- (250gms). Please share order and delivery details."
   },
+  {
+    id: "geode-black-tourmaline-450g",
+    name: "Black Tourmaline",
+    slug: "black-tourmaline-450g",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/black-tourmaline-450g.jpg",
+    gallery: [
+      "/black-tourmaline-450g.jpg"
+    ],
+    shortDescription: "Black Tourmaline (450gms)",
+    description: "Black Tourmaline (450gms)",
+    price: "1350/- (450gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Black Tourmaline 1350/- (450gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
