@@ -80,8 +80,8 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
           })}
         </div>
 
-        {/* Product Cards Grid: Luxury Spiritual Boutique */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 max-w-sm sm:max-w-none mx-auto">
+        {/* Product Cards Grid: 2x2 on Mobile, 4-col on Desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           {displayedProducts.map((product, idx) => (
             <motion.div
               key={product.id}
@@ -89,9 +89,9 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: (idx % 4) * 0.1 }}
-              className="group flex flex-col justify-between rounded-3xl overflow-hidden bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-xl transition-all duration-500 glass-card-hover"
+              className="group flex flex-col justify-between rounded-2xl sm:rounded-3xl overflow-hidden bg-softCream border border-secondaryPurple/40 shadow-xs sm:shadow-sm hover:shadow-xl transition-all duration-500 glass-card-hover"
             >
-              {/* Product Visual Container - Increased Image Size */}
+              {/* Product Visual Container */}
               <div
                 onClick={() => setActiveProduct(product)}
                 className="relative aspect-[4/5] w-full overflow-hidden bg-warmBeige cursor-pointer"
@@ -106,12 +106,12 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
                 <div className="absolute inset-0 bg-gradient-to-t from-warmBeige/40 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity" />
 
                 {/* Subcategory Pill */}
-                <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md text-[9px] font-semibold uppercase tracking-wider text-brandText border border-secondaryPurple/30 shadow-sm">
+                <span className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full bg-white/90 backdrop-blur-md text-[8px] sm:text-[9px] font-semibold uppercase tracking-wider text-brandText border border-secondaryPurple/30 shadow-sm truncate max-w-[85%]">
                   {product.categoryLabel}
                 </span>
 
-                {/* Hover Quick Action Badge */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brandText/15 backdrop-blur-[2px]">
+                {/* Hover Quick Action Badge for Desktop */}
+                <div className="absolute inset-0 hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brandText/15 backdrop-blur-[2px]">
                   <span className="px-3.5 py-1.5 rounded-full bg-softCream text-xs font-semibold uppercase tracking-wider text-brandText shadow-lg flex items-center gap-1.5">
                     <span>Quick View</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -120,24 +120,24 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
               </div>
 
               {/* Product Info - Compact White Box */}
-              <div className="p-4 sm:p-4.5 flex flex-col justify-between flex-1 space-y-2.5">
-                <div className="space-y-1">
+              <div className="p-2.5 sm:p-4.5 flex flex-col justify-between flex-1 space-y-2 sm:space-y-2.5">
+                <div className="space-y-0.5 sm:space-y-1">
                   <h3
                     onClick={() => setActiveProduct(product)}
-                    className="font-editorial text-lg sm:text-xl text-brandText font-normal cursor-pointer hover:text-mutedPurple transition-colors leading-tight truncate"
+                    className="font-editorial text-sm sm:text-xl text-brandText font-normal cursor-pointer hover:text-mutedPurple transition-colors leading-snug truncate"
                     title={product.name}
                   >
                     {product.name}
                   </h3>
 
                   {product.price && (
-                    <div className="font-editorial text-xl sm:text-2xl font-semibold text-brandText leading-tight">
+                    <div className="font-editorial text-base sm:text-2xl font-semibold text-brandText leading-tight">
                       {product.price}
                     </div>
                   )}
 
                   <p 
-                    className="text-[11px] sm:text-xs text-brandLightText font-light truncate leading-normal"
+                    className="text-[10px] sm:text-xs text-brandLightText font-light truncate leading-normal"
                     title={product.shortDescription}
                   >
                     {product.shortDescription}
@@ -145,15 +145,15 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
                 </div>
 
                 {/* Card Action Row */}
-                <div className="pt-2 border-t border-secondaryPurple/25">
+                <div className="pt-1.5 sm:pt-2 border-t border-secondaryPurple/25">
                   <a
                     href={getProductWhatsAppUrl(product.name, product.whatsappMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow-md flex items-center justify-center gap-1.5"
+                    className="w-full py-2 sm:py-2.5 px-2 sm:px-3 rounded-xl sm:rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1db954] text-white text-[10px] sm:text-xs font-semibold tracking-normal sm:tracking-wider uppercase transition-all duration-300 shadow-xs hover:shadow-md active:scale-95 flex items-center justify-center gap-1 sm:gap-1.5"
                   >
-                    <MessageCircle className="w-4 h-4 fill-current shrink-0" />
-                    <span>Order on WhatsApp</span>
+                    <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current shrink-0" />
+                    <span className="truncate">Order on WhatsApp</span>
                   </a>
                 </div>
               </div>
