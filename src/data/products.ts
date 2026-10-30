@@ -302,6 +302,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Raw Rose Quartz 565/- (114gms). Please share order and delivery details."
   },
+  {
+    id: "geode-amethyst-250g",
+    name: "Amethyst",
+    slug: "amethyst-cluster-250g",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/amethyst-cluster-250g.jpg",
+    gallery: [
+      "/amethyst-cluster-250g.jpg"
+    ],
+    shortDescription: "Amethyst (250gms)",
+    description: "Amethyst (250gms)",
+    price: "1375/- (250gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Amethyst 1375/- (250gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
