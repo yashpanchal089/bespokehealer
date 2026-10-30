@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: 'bath-salts' | 'bracelets' | 'geodes-clusters' | 'wall-hangings' | 'decor';
+  category: 'bath-salts' | 'bracelets' | 'geodes-clusters' | 'wall-hangings';
   categoryLabel: string;
   subcategory?: string;
   image: string;
@@ -20,8 +20,7 @@ export const productCategories = [
   { id: 'bath-salts', label: 'Bath Salts' },
   { id: 'bracelets', label: 'Bracelets' },
   { id: 'geodes-clusters', label: 'Geodes, Clusters & More' },
-  { id: 'wall-hangings', label: 'Wall Hangings' },
-  { id: 'decor', label: 'Sacred Décor' },
+  { id: 'wall-hangings', label: 'Wall Hangings & Frames' },
 ] as const;
 
 export const productsData: Product[] = [
@@ -183,6 +182,24 @@ export const productsData: Product[] = [
   },
 
   // --- GEODES, CLUSTERS & MORE ---
+  {
+    id: "selenite-charging-plate",
+    name: "Selenite Plate to Charge Crystals",
+    slug: "selenite-plate-to-charge-crystals",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    subcategory: "Charging Plate",
+    image: "/selenite-charging-plate.jpg",
+    gallery: [
+      "/selenite-charging-plate.jpg"
+    ],
+    shortDescription: "Sacred Flower of Life engraved selenite plate to cleanse & charge crystals",
+    description: "Crafted from genuine translucent Moroccan selenite engraved with the sacred Flower of Life geometry. Selenite is a powerful self-cleansing crystal that continuously clears stagnant vibrations and recharges your crystal bracelets, stones, and spiritual jewelry.",
+    price: "350/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Selenite Plate to Charge Crystals (350/-). Please share order and delivery details."
+  },
   {
     id: "geode-wish-cave",
     name: "Wish Cave",
@@ -354,13 +371,31 @@ export const productsData: Product[] = [
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Black Tourmaline 1269/- (423gms). Please share order and delivery details."
   },
 
-  // --- WALL HANGINGS ---
+  // --- WALL HANGINGS & FRAMES ---
+  {
+    id: "frame-7-horses-pyrite",
+    name: "7 Horses Pyrite Frame",
+    slug: "7-horses-pyrite-frame",
+    category: "wall-hangings",
+    categoryLabel: "Frames & Hangings",
+    subcategory: "Vastu & Prosperity Frame",
+    image: "/7-horses-pyrite-frame.jpg",
+    gallery: [
+      "/7-horses-pyrite-frame.jpg"
+    ],
+    shortDescription: "Natural shimmering pyrite crystal base with 7 golden running horses",
+    description: "Handcrafted with a genuine shimmering pyrite crystal base featuring 7 golden galloping horses under a radiant sun. In Vastu and crystal healing, pyrite is the ultimate stone of wealth and manifestation, while the 7 running horses symbolize rapid victory, relentless momentum, and unyielding career and financial breakthroughs.",
+    price: "950/-",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the 7 Horses Pyrite Frame (950/-). Please share order and delivery details."
+  },
   {
     id: "hanging-7-chakra-raw",
     name: "7 Chakra Raw Crystal Wall Hanging",
     slug: "7-chakra-raw-crystal-wall-hanging",
     category: "wall-hangings",
-    categoryLabel: "Wall Hangings",
+    categoryLabel: "Frames & Hangings",
     subcategory: "Sanctuary Hanging",
     image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=900&auto=format&fit=crop",
     gallery: [
@@ -378,7 +413,7 @@ export const productsData: Product[] = [
     name: "Selenite & Evil Eye Sanctuary Hanger",
     slug: "selenite-evil-eye-sanctuary-hanger",
     category: "wall-hangings",
-    categoryLabel: "Wall Hangings",
+    categoryLabel: "Frames & Hangings",
     subcategory: "Protective Amulet",
     image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=900&auto=format&fit=crop",
     gallery: [
@@ -390,43 +425,5 @@ export const productsData: Product[] = [
     availability: "In Stock",
     featured: false,
     whatsappMessage: "Hi Dr. Srushti 👋 I saw the Selenite Sanctuary Hanger on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-
-  // --- SACRED DÉCOR / CRYSTAL HORSES ---
-  {
-    id: "decor-crystal-horse",
-    name: "Handcrafted Sacred Crystal Horse",
-    slug: "handcrafted-crystal-horse",
-    category: "decor",
-    categoryLabel: "Sacred Décor",
-    subcategory: "Energy Sculpture",
-    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Carved natural crystal sculpture symbolizing relentless momentum, victory and noble grace.",
-    description: "A potent talisman of vitality and forward momentum, activating inner strength, endurance, and swift breakthroughs in personal and professional endeavors.",
-    price: "₹3,800",
-    availability: "Handcrafted Upon Request",
-    featured: true,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Handcrafted Sacred Crystal Horse on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
-  },
-  {
-    id: "decor-pyrite-cluster",
-    name: "Golden Pyrite Wealth Cluster",
-    slug: "golden-pyrite-wealth-cluster",
-    category: "decor",
-    categoryLabel: "Sacred Décor",
-    subcategory: "Prosperity Specimen",
-    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=900&auto=format&fit=crop",
-    gallery: [
-      "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=900&auto=format&fit=crop"
-    ],
-    shortDescription: "Geometric brass-gold cubic crystals naturally formed inside earth matrices.",
-    description: "The gold standard stone for entrepreneurial vision. Placed near your cash register, journal, or workstation to anchor unwavering abundance consciousness.",
-    price: "₹2,100",
-    availability: "In Stock",
-    featured: false,
-    whatsappMessage: "Hi Dr. Srushti 👋 I saw the Golden Pyrite Wealth Cluster on the Bespoke Healer website and I'm interested in it. Could you please share the price and availability?"
   }
 ];

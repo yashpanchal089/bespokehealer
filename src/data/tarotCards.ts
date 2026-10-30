@@ -1,5 +1,6 @@
 export interface TarotCard {
   id: string;
+  cardIndexLabel: string;
   name: string;
   romanNumeral: string;
   archetype: string;
@@ -11,19 +12,60 @@ export interface TarotCard {
 }
 
 export const tarotExperienceCards: TarotCard[] = [
+  // --- USER'S 3 PRIMARY REVEAL CARDS ---
   {
-    id: "star",
+    id: "card-1-six-of-pentacles",
+    cardIndexLabel: "Card 1",
+    name: "Six of Pentacles",
+    romanNumeral: "VI",
+    archetype: "Circumstances Will Improve",
+    reflection: "This card is a welcome sign that your circumstances will certainly improve.",
+    actionGuidance: "Stay open to receiving blessings, help, and the harmonious balance returning to your life.",
+    element: "Earth • Pentacles",
+    symbol: "✦",
+    cardImage: "/tarot-six-of-pentacles.jpg"
+  },
+  {
+    id: "card-2-five-of-wands",
+    cardIndexLabel: "Card 2",
+    name: "5 of Wands",
+    romanNumeral: "V",
+    archetype: "Hold Your Position & Succeed",
+    reflection: "5 of Wands — Misunderstandings abound, particularly in work matters. You are surrounded by people with strong opinions but hold your position & you will succeed.",
+    actionGuidance: "Stand firm in your truth with grace. Channel chaotic competitive energy into creative triumph.",
+    element: "Fire • Wands",
+    symbol: "⚡",
+    cardImage: "/tarot-five-of-wands.jpg"
+  },
+  {
+    id: "card-3-the-sun",
+    cardIndexLabel: "Card 3",
+    name: "The Sun",
+    romanNumeral: "XIX",
+    archetype: "Complete Life Improvement",
+    reflection: "If you have had a challenging time, the Sun shows that every aspect of your life will improve.",
+    actionGuidance: "Celebrate your resilience and bask in renewed clarity, warmth, and vitality.",
+    element: "Fire • Solar",
+    symbol: "☼",
+    cardImage: "/tarot-the-sun.jpg"
+  },
+
+  // --- RESERVE DECK POOL (Drawn when cards turn & replace) ---
+  {
+    id: "the-star",
+    cardIndexLabel: "Card 4",
     name: "The Star",
     romanNumeral: "XVII",
-    archetype: "Hope & Divine Alignment",
-    reflection: "Release the weight of what was. The universe is gently clearing space for genuine peace.",
-    actionGuidance: "Trust the slow renewal underway in your heart. You are held.",
+    archetype: "Hope & Divine Renewal",
+    reflection: "Release the weight of what was. The universe is gently clearing space for genuine peace and renewal.",
+    actionGuidance: "Trust the slow renewal underway in your heart. You are divinely protected.",
     element: "Air • Aquarius",
-    symbol: "✦",
+    symbol: "★",
     cardImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "high-priestess",
+    id: "the-high-priestess",
+    cardIndexLabel: "Card 5",
     name: "The High Priestess",
     romanNumeral: "II",
     archetype: "Sacred Intuition & Stillness",
@@ -34,14 +76,27 @@ export const tarotExperienceCards: TarotCard[] = [
     cardImage: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop"
   },
   {
-    id: "sun",
-    name: "The Sun",
-    romanNumeral: "XIX",
-    archetype: "Radiance & Vital Truth",
-    reflection: "Clouded doubts are dissolving into warmth. Step unapologetically into your own light.",
-    actionGuidance: "Allow yourself to celebrate how far you have already come.",
-    element: "Fire • Solar",
-    symbol: "☼",
+    id: "the-empress",
+    cardIndexLabel: "Card 6",
+    name: "The Empress",
+    romanNumeral: "III",
+    archetype: "Abundance & Fertility",
+    reflection: "You are entering a fertile season of growth, beauty, and heartfelt creative fulfillment.",
+    actionGuidance: "Nurture your dreams with patience; your efforts are blooming into reality.",
+    element: "Earth • Venus",
+    symbol: "♀",
     cardImage: "https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=800&auto=format&fit=crop"
+  },
+  {
+    id: "wheel-of-fortune",
+    cardIndexLabel: "Card 7",
+    name: "Wheel of Fortune",
+    romanNumeral: "X",
+    archetype: "Karmic Shift & Synchronicity",
+    reflection: "The cosmic wheel is turning in your favor. Sudden positive shifts and fortunate alignment are on their way.",
+    actionGuidance: "Embrace unexpected changes with confidence; destiny is orchestrating breakthroughs for you.",
+    element: "Fire • Jupiter",
+    symbol: "☸",
+    cardImage: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
   }
 ];
