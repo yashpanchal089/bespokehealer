@@ -123,12 +123,12 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
-          {/* ================= LEFT COLUMN: Headline & CTAs with Full Animations ================= */}
+          {/* ================= TEXT COLUMN: Headline & CTAs with Full Animations (Order 2 on mobile, Order 1 on desktop) ================= */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 flex flex-col items-start text-left space-y-6 sm:space-y-7"
+            className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-7"
           >
             {/* Animated Brand Eyebrow with shimmer effect */}
             <motion.div variants={itemFadeUp} className="relative overflow-hidden">
@@ -205,11 +205,11 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             </motion.div>
 
             {/* Supporting Copy with Client Signature Motto */}
-            <motion.div variants={itemFadeUp} className="space-y-2.5">
-              <p className="font-editorial text-xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide">
+            <motion.div variants={itemFadeUp} className="space-y-2 sm:space-y-2.5">
+              <p className="font-editorial text-xl sm:text-3xl text-[#3A3038] font-normal italic tracking-wide max-w-lg">
                 "What happens to your energy body <br className="hidden sm:inline" /> tends to manifest physically."
               </p>
-              <div className="text-sm sm:text-lg text-[#635760] font-light tracking-wide flex items-center flex-wrap gap-2 pt-0.5">
+              <div className="text-sm sm:text-lg text-[#635760] font-light tracking-wide flex items-center justify-center lg:justify-start flex-wrap gap-2 pt-0.5">
                 <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Tarot</span>
                 <span className="text-[#E5A8CE]">•</span>
                 <span className="hover:text-[#2B2329] hover:font-normal transition-all cursor-default">Energy Healing</span>
@@ -221,14 +221,14 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             {/* Animated Interactive CTA Buttons */}
             <motion.div
               variants={itemFadeUp}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 pt-2 w-full sm:w-auto"
             >
               {/* Primary "Explore Services" Pill Button with Floating Compass */}
               <motion.a
                 href="#services"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="relative group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold tracking-wider bg-[#221B20] hover:bg-[#3D2C39] text-white transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden"
+                className="relative group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-semibold tracking-wider bg-[#221B20] hover:bg-[#3D2C39] text-white transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden min-h-[48px]"
               >
                 {/* Subtle internal button sheen */}
                 <motion.div
@@ -252,7 +252,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
                 onClick={onBookClick}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm font-semibold tracking-wider uppercase bg-[#E5A8CE]/50 hover:bg-[#E5A8CE]/80 text-[#30232E] border border-[#D380B8]/40 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm font-semibold tracking-wider uppercase bg-[#E5A8CE]/50 hover:bg-[#E5A8CE]/80 text-[#30232E] border border-[#D380B8]/40 transition-all duration-300 shadow-sm hover:shadow-md min-h-[48px]"
               >
                 <motion.div
                   animate={{ rotate: [0, 15, -15, 0] }}
@@ -267,7 +267,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             {/* Trust Strip Metrics with Live Pulse */}
             <motion.div
               variants={itemFadeUp}
-              className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-[#756B70]"
+              className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-5 text-xs text-[#756B70]"
             >
               <span className="flex items-center gap-2 font-medium text-[#40383F]">
                 <span className="relative flex h-2.5 w-2.5">
@@ -283,8 +283,8 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             </motion.div>
           </motion.div>
 
-          {/* ================= RIGHT COLUMN: Serene Grounded Portrait of Dr. Srushti Garg ================= */}
-          <div className="lg:col-span-5 relative flex items-center justify-center mt-4 lg:mt-0">
+          {/* ================= PORTRAIT COLUMN: Dr. Srushti Garg (Order 1 on mobile, Order 2 on desktop) ================= */}
+          <div className="lg:col-span-5 order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-6 lg:mb-0 mt-2 lg:mt-0">
 
             {/* Sacred Halo Rotating Geometry Rings (Preserved as requested: "behind circle is good. keep this") */}
             <motion.div
