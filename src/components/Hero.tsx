@@ -121,14 +121,14 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
 
       {/* ================= HERO MAIN CONTENT CONTAINER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-6 lg:gap-8 items-center">
 
           {/* ================= TEXT COLUMN: Headline & CTAs with Full Animations (Order 2 on mobile, Order 1 on desktop) ================= */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5 sm:space-y-7"
+            className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 sm:space-y-6 lg:space-y-7"
           >
             {/* Animated Brand Eyebrow with shimmer effect (Desktop only - on mobile it appears above portrait) */}
             <motion.div variants={itemFadeUp} className="relative overflow-hidden hidden lg:block">
@@ -152,7 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
             </motion.div>
 
             {/* Magnetic Animated Headline */}
-            <motion.div variants={itemFadeUp} className="space-y-1">
+            <motion.div variants={itemFadeUp} className="space-y-1 !mt-0 lg:!mt-6">
               <h1 className="font-editorial text-4xl sm:text-6xl md:text-7xl lg:text-[5.3rem] font-normal leading-[1.08] sm:leading-[1.04] text-[#2B2329] tracking-tight">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
@@ -284,13 +284,13 @@ export const Hero: React.FC<HeroProps> = ({ onBookClick }) => {
           </motion.div>
 
           {/* ================= PORTRAIT COLUMN: Dr. Srushti Garg (Order 1 on mobile, Order 2 on desktop) ================= */}
-          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center justify-center mb-4 sm:mb-6 lg:mb-0 mt-2 lg:mt-0">
+          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col items-center justify-center mb-0 sm:mb-2 lg:mb-0 mt-0 lg:mt-0">
             {/* Mobile Only: Brand Eyebrow Badge shifted above Dr. Srushti's Portrait Image */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:hidden mb-4 sm:mb-5 relative overflow-hidden z-20"
+              className="lg:hidden mb-3 sm:mb-4 relative overflow-hidden z-20"
             >
               <div className="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E7DCEF]/70 border border-[#E5A8CE]/60 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#40383F] shadow-xs">
                 <motion.span
