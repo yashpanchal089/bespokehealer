@@ -153,9 +153,9 @@ export const productsData: Product[] = [
     slug: "rose-bath-salt",
     category: "bath-salts",
     categoryLabel: "Bath Salts",
-    image: "/rose-bath-salt.png",
+    image: "/rose-bath-salt.jpg",
     gallery: [
-      "/rose-bath-salt.png"
+      "/rose-bath-salt.jpg"
     ],
     shortDescription: "Brings emotional peace • Infused with vitamin E",
     description: "Brings emotional peace • Infused with vitamin E",
