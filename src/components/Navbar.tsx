@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../data/config';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 
@@ -37,11 +38,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
 
   return (
     <>
+      {/* Header: Pure white on mobile viewports (< lg), gradient/glass on desktop */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'glass-nav py-3 shadow-sm'
-            : 'bg-gradient-to-b from-[#F5EFE6]/95 via-[#F5EFE6]/70 to-transparent py-4 sm:py-5'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#F0E6EE]/80 py-2.5 sm:py-3'
+            : 'bg-white shadow-xs border-b border-[#F0E6EE]/70 lg:bg-gradient-to-b lg:from-[#F5EFE6]/95 lg:via-[#F5EFE6]/70 lg:to-transparent lg:shadow-none lg:border-b-0 py-2.5 sm:py-3.5 lg:py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -55,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
             <img
               src="/bespoke-healer-logo.png"
               alt="Bespoke Healer"
-              className="h-11 sm:h-13 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="text-[9.5px] sm:text-[10.5px] tracking-[0.24em] uppercase text-brandLightText font-light pl-0.5">
               {siteConfig.founderName}
@@ -136,84 +138,127 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#f09433]/20 via-[#dc2743]/20 to-[#bc1888]/20 text-[#c13584] border border-[#dc2743]/30 active:scale-95 transition-transform"
+              className="p-2 min-w-[38px] min-h-[38px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#f09433]/15 via-[#dc2743]/15 to-[#bc1888]/15 text-[#c13584] border border-[#dc2743]/25 active:scale-95 transition-transform"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
 
             <button
               onClick={onBookClick}
-              className="px-4 py-2 min-h-[42px] rounded-full text-xs font-semibold uppercase tracking-wider bg-[#2B1F27] active:bg-[#43313D] text-white shadow-xs active:scale-95 transition-all"
+              className="px-3.5 py-2 min-h-[38px] rounded-full text-xs font-semibold uppercase tracking-wider bg-[#2B1F27] active:bg-[#43313D] text-white shadow-xs active:scale-95 transition-all"
             >
               Book
             </button>
+
+            {/* Animated Hamburger Button with Morphing 3-Bar to X */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-brandText hover:bg-lightLavender/40 active:bg-lightLavender/60 transition-colors"
+              className="p-2 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-xl bg-gray-50/90 hover:bg-gray-100 active:bg-gray-200 border border-gray-200/60 text-[#2B2329] transition-all focus:outline-none"
               aria-label="Toggle Navigation Menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <div className="w-5 h-3.5 flex flex-col justify-between items-center relative pointer-events-none">
+                <motion.span
+                  animate={mobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="w-5 h-0.5 bg-[#2B2329] rounded-full origin-center"
+                />
+                <motion.span
+                  animate={mobileMenuOpen ? { opacity: 0, x: -6 } : { opacity: 1, x: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="w-5 h-0.5 bg-[#2B2329] rounded-full"
+                />
+                <motion.span
+                  animate={mobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="w-5 h-0.5 bg-[#2B2329] rounded-full origin-center"
+                />
+              </div>
             </button>
           </div>
         </div>
       </header>
 
-      {/* ================= MOBILE DRAWER MENU ================= */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-warmBeige/98 backdrop-blur-2xl md:hidden pt-24 px-6 flex flex-col justify-between pb-8 overflow-y-auto h-[100dvh] animate-fadeIn">
-          <nav className="flex flex-col space-y-3.5 text-center my-auto py-4">
-            {navLinks.map((link) => {
-              const isAnchor = link.href.startsWith('/#');
-              const targetHref = isAnchor && location.pathname === '/' ? link.href.replace('/', '') : link.href;
-              return (
-                <a
-                  key={link.label}
-                  href={targetHref}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="font-editorial text-2xl text-brandText hover:text-mutedPurple active:scale-95 transition-all py-2 min-h-[44px] flex items-center justify-center"
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </nav>
+      {/* ================= COMPACT MOBILE FLOATING MENU (White background, takes only required height) ================= */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Click-away backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 z-40 bg-black/25 backdrop-blur-xs md:hidden"
+            />
 
-          <div className="pt-4 border-t border-secondaryPurple/30 flex flex-col items-center gap-3.5 shrink-0">
-            <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
-              <a
-                href={siteConfig.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-xs font-semibold shadow-md active:scale-95 transition-transform"
-              >
-                <InstagramIcon className="w-4 h-4" />
-                <span>Instagram</span>
-              </a>
-
-              <a
-                href={siteConfig.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-[#1877F2] text-white text-xs font-semibold shadow-md active:scale-95 transition-transform"
-              >
-                <FacebookIcon className="w-4 h-4" />
-                <span>Facebook</span>
-              </a>
-            </div>
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onBookClick();
-              }}
-              className="w-full py-4 min-h-[48px] rounded-full bg-[#2B1F27] active:bg-[#43313D] text-white font-medium text-xs tracking-wider uppercase shadow-md active:scale-95 transition-all flex items-center justify-center gap-2"
+            {/* Compact Floating White Dropdown Menu */}
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.22, ease: 'easeOut' }}
+              className="fixed top-[58px] sm:top-[66px] left-3 right-3 sm:left-6 sm:right-6 z-50 md:hidden bg-white rounded-3xl border border-[#F0E6EE] shadow-2xl p-4 sm:p-5 flex flex-col gap-3"
             >
-              <Sparkles className="w-4 h-4 text-[#E7DCEF]" />
-              <span>Book a 60-Minute Session</span>
-            </button>
-          </div>
-        </div>
-      )}
+              {/* Navigation Links Grid (2-column layout to keep it compact and easy to reach) */}
+              <nav className="grid grid-cols-2 gap-1.5 py-1">
+                {navLinks.map((link) => {
+                  const isAnchor = link.href.startsWith('/#');
+                  const targetHref = isAnchor && location.pathname === '/' ? link.href.replace('/', '') : link.href;
+                  return (
+                    <a
+                      key={link.label}
+                      href={targetHref}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-medium tracking-wide text-[#3D333B] hover:text-[#2B1F27] hover:bg-[#F8EBF4]/70 active:bg-[#F8EBF4] transition-all flex items-center justify-between group"
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-[#D380B8] opacity-60 group-hover:opacity-100 transition-opacity text-[10px]">✦</span>
+                    </a>
+                  );
+                })}
+              </nav>
+
+              {/* Bottom Quick Actions */}
+              <div className="pt-3 border-t border-[#F0E6EE] flex flex-col gap-2.5">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onBookClick();
+                  }}
+                  className="w-full py-3 min-h-[44px] rounded-full bg-[#2B1F27] active:bg-[#43313D] text-white font-medium text-xs tracking-wider uppercase shadow-sm active:scale-98 transition-all flex items-center justify-center gap-2"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-[#E7DCEF]" />
+                  <span>Book a Session</span>
+                </button>
+
+                <div className="grid grid-cols-2 gap-2 pt-0.5">
+                  <a
+                    href={siteConfig.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 min-h-[40px] rounded-full bg-gradient-to-r from-[#f09433]/10 via-[#dc2743]/10 to-[#bc1888]/10 text-[#bc1888] border border-[#dc2743]/25 text-xs font-semibold active:scale-95 transition-transform"
+                  >
+                    <InstagramIcon className="w-3.5 h-3.5" />
+                    <span>Instagram</span>
+                  </a>
+
+                  <a
+                    href={siteConfig.facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-2.5 px-3 min-h-[40px] rounded-full bg-[#1877F2]/10 text-[#1877F2] border border-[#1877F2]/25 text-xs font-semibold active:scale-95 transition-transform"
+                  >
+                    <FacebookIcon className="w-3.5 h-3.5" />
+                    <span>Facebook</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 };
