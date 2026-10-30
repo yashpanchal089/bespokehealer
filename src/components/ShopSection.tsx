@@ -15,16 +15,30 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
+  // Specific 4 featured products for homepage spotlight
+  const homepageFeaturedIds = [
+    'salt-rose', // 1. Rose Bath Salt
+    'bracelet-money-magnet', // 2. Money Magnet Bracelet
+    'geode-black-tourmaline-450g', // 3. Black Tourmaline 1350/- (450gms)
+    'geode-wish-cave', // 4. Wish Cave
+  ];
+
   // Filter products by selected category
   const filteredProducts = productsData.filter((product) => {
     if (selectedCategory === 'all') {
-      return isFullCatalogPage ? true : product.featured;
+      return true;
     }
     return product.category === selectedCategory;
   });
 
   // Limit display on homepage
-  const displayedProducts = isFullCatalogPage ? filteredProducts : filteredProducts.slice(0, 8);
+  const displayedProducts = isFullCatalogPage
+    ? filteredProducts
+    : selectedCategory === 'all'
+      ? homepageFeaturedIds
+          .map((id) => productsData.find((p) => p.id === id))
+          .filter((p): p is Product => p !== undefined)
+      : filteredProducts.slice(0, 4);
 
   return (
     <section id="shop" className="py-24 relative overflow-hidden bg-grain">
