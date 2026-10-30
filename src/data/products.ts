@@ -268,6 +268,23 @@ export const productsData: Product[] = [
     featured: true,
     whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Citrine 2219/- (317gms). Please share order and delivery details."
   },
+  {
+    id: "geode-black-tourmaline-100g",
+    name: "Black Tourmaline",
+    slug: "black-tourmaline-100g",
+    category: "geodes-clusters",
+    categoryLabel: "Geodes, Clusters & More",
+    image: "/black-tourmaline-100g.jpg",
+    gallery: [
+      "/black-tourmaline-100g.jpg"
+    ],
+    shortDescription: "Black Tourmaline (100gms)",
+    description: "Black Tourmaline (100gms)",
+    price: "300/- (100gms)",
+    availability: "In Stock",
+    featured: true,
+    whatsappMessage: "Hi Dr. Srushti 👋 I would like to order the Black Tourmaline 300/- (100gms). Please share order and delivery details."
+  },
 
   // --- WALL HANGINGS ---
   {
