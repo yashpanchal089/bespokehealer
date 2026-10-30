@@ -34,25 +34,25 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brandText/40 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-lg bg-softCream rounded-3xl border border-secondaryPurple/40 shadow-2xl p-6 sm:p-8 overflow-y-auto max-h-[92vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-brandText/50 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-lg bg-softCream rounded-3xl border border-secondaryPurple/40 shadow-2xl p-5 sm:p-8 overflow-y-auto max-h-[90dvh] sm:max-h-[92vh]">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full hover:bg-lightLavender transition-colors text-brandText"
+          className="absolute top-4 right-4 p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full hover:bg-lightLavender active:bg-lightLavender/80 transition-all text-brandText active:scale-95"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="space-y-1 mb-6">
+        <div className="space-y-1 mb-5 sm:mb-6 pr-8">
           <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] text-mutedPurple">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Personal Session Booking</span>
           </div>
-          <h3 className="font-editorial text-3xl sm:text-4xl text-brandText font-normal">
+          <h3 className="font-editorial text-2xl sm:text-4xl text-brandText font-normal leading-tight">
             Schedule Appointment with Dr. Srushti Garg
           </h3>
           <p className="text-xs text-brandLightText font-light">
@@ -61,21 +61,21 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
         </div>
 
         {/* Pricing & Duration Guarantee Pill */}
-        <div className="p-3.5 rounded-2xl bg-warmBeige border border-secondaryPurple/30 flex items-center justify-between text-xs mb-6">
+        <div className="p-3 sm:p-3.5 rounded-2xl bg-warmBeige border border-secondaryPurple/30 flex items-center justify-between text-xs mb-5 sm:mb-6">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-mutedPurple" />
+            <Clock className="w-4 h-4 text-mutedPurple shrink-0" />
             <span className="font-medium text-brandText">{sessionDuration}</span>
           </div>
           <div className="flex items-center gap-1 text-emerald-800 font-medium">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span>Transparent Fee: {sessionFee}</span>
           </div>
         </div>
 
         {/* Booking Preferences Form */}
-        <form onSubmit={handleSubmitWhatsApp} className="space-y-5">
+        <form onSubmit={handleSubmitWhatsApp} className="space-y-4 sm:space-y-5">
           
-          {/* Your Name */}
+          {/* Your Name — text-base on mobile prevents unwanted iOS Safari zoom */}
           <div>
             <label className="block text-xs font-semibold uppercase tracking-wider text-brandText mb-2">
               Your Name
@@ -86,7 +86,7 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
               placeholder="e.g. Aarti Sharma"
               value={clientName}
               onChange={(e) => setClientName(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl bg-white border border-secondaryPurple/40 text-xs text-brandText placeholder-brandLightText/60 focus:outline-none focus:ring-2 focus:ring-mutedPurple/40"
+              className="w-full px-4 py-3 min-h-[46px] rounded-2xl bg-white border border-secondaryPurple/40 text-base sm:text-xs text-brandText placeholder-brandLightText/60 focus:outline-none focus:ring-2 focus:ring-mutedPurple/40"
             />
           </div>
 
@@ -178,7 +178,7 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
             <select
               value={timePreference}
               onChange={(e) => setTimePreference(e.target.value)}
-              className="w-full px-4 py-3 rounded-2xl bg-white border border-secondaryPurple/40 text-xs text-brandText focus:outline-none focus:ring-2 focus:ring-mutedPurple/40"
+              className="w-full px-4 py-3 min-h-[46px] rounded-2xl bg-white border border-secondaryPurple/40 text-base sm:text-xs text-brandText focus:outline-none focus:ring-2 focus:ring-mutedPurple/40"
             >
               <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
               <option value="Afternoon (2:00 PM - 5:00 PM)">Afternoon (2:00 PM - 5:00 PM)</option>
@@ -190,9 +190,9 @@ export const BookSessionModal: React.FC<BookSessionModalProps> = ({
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-4 min-h-[50px] rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1db954] text-white text-xs uppercase font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <MessageCircle className="w-4 h-4 fill-current shrink-0" />
               <span>Confirm & Send on WhatsApp</span>
             </button>
             <p className="text-[10px] text-center text-brandLightText font-light mt-2.5">

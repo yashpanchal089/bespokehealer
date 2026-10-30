@@ -83,9 +83,9 @@ export const StatsStrip: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 border-y border-secondaryPurple/30 bg-softCream/60 backdrop-blur-sm overflow-hidden">
+    <section className="relative py-10 sm:py-16 border-y border-secondaryPurple/30 bg-softCream/60 backdrop-blur-sm overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {stats.map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -101,7 +101,7 @@ export const StatsStrip: React.FC = () => {
               )}
 
               {/* Huge Serif Number with Animated Rolling Counter */}
-              <span className="font-editorial text-4xl sm:text-5xl md:text-6xl text-brandText font-light tracking-tight group-hover:text-mutedPurple transition-colors duration-300">
+              <span className="font-editorial text-3xl sm:text-5xl md:text-6xl text-brandText font-light tracking-tight group-hover:text-mutedPurple transition-colors duration-300">
                 <AnimatedCounter
                   value={stat.numericValue}
                   suffix={stat.suffix}
@@ -111,12 +111,12 @@ export const StatsStrip: React.FC = () => {
               </span>
 
               {/* Primary Label */}
-              <h2 className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-brandText mt-2">
+              <h2 className="text-[11px] sm:text-sm font-semibold tracking-wider uppercase text-brandText mt-1.5 sm:mt-2">
                 {stat.label}
               </h2>
 
               {/* Minimal Sublabel */}
-              <p className="text-[11px] text-brandLightText font-light tracking-wide mt-0.5">
+              <p className="text-[10px] sm:text-[11px] text-brandLightText font-light tracking-wide mt-0.5">
                 {stat.sublabel}
               </p>
             </motion.div>

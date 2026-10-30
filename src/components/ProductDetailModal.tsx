@@ -14,20 +14,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
   const whatsappLink = getProductWhatsAppUrl(product.name, product.whatsappMessage);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brandText/40 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-softCream rounded-3xl overflow-hidden border border-secondaryPurple/40 shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-brandText/50 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-softCream rounded-3xl overflow-hidden border border-secondaryPurple/40 shadow-2xl flex flex-col md:flex-row max-h-[90dvh] sm:max-h-[90vh]">
         
-        {/* Close Button */}
+        {/* Close Button — 44px touch target on mobile */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 hover:bg-white text-brandText transition-colors shadow-sm"
+          className="absolute top-3 right-3 z-30 p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-brandText transition-colors shadow-md active:scale-95"
           aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Product Media Column */}
-        <div className="md:w-1/2 relative bg-warmBeige min-h-[260px] md:min-h-[420px] overflow-hidden">
+        {/* Product Media Column — Compact height on mobile so content doesn't get buried */}
+        <div className="h-52 sm:h-64 md:h-auto md:min-h-[420px] md:w-1/2 relative bg-warmBeige overflow-hidden shrink-0">
           <img
             src={product.image}
             alt={product.name}
@@ -35,7 +35,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
           />
           <div className="absolute inset-0 bg-gradient-to-t from-softCream/40 via-transparent to-transparent" />
           
-          <div className="absolute bottom-4 left-4">
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4">
             <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-secondaryPurple/30 text-[10px] font-semibold uppercase tracking-wider text-brandText shadow-sm">
               {product.categoryLabel}
             </span>
@@ -43,8 +43,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
         </div>
 
         {/* Product Details & WhatsApp CTA Column */}
-        <div className="md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
-          <div className="space-y-4">
+        <div className="md:w-1/2 p-5 sm:p-8 flex flex-col justify-between overflow-y-auto">
+          <div className="space-y-3.5 sm:space-y-4">
             <div>
               {product.subcategory && (
                 <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-mutedPurple flex items-center gap-1.5">
@@ -52,7 +52,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
                   {product.subcategory}
                 </span>
               )}
-              <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal mt-1">
+              <h3 className="font-editorial text-2xl sm:text-3xl text-brandText font-normal mt-1 leading-tight">
                 {product.name}
               </h3>
               {product.price && (
@@ -67,26 +67,26 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({ product,
               {product.shortDescription}
             </p>
 
-            <div className="p-3.5 rounded-2xl bg-warmBeige/80 border border-secondaryPurple/30 space-y-2">
+            <div className="p-3 sm:p-3.5 rounded-2xl bg-warmBeige/80 border border-secondaryPurple/30 space-y-2">
               <p className="text-xs text-brandText font-light leading-relaxed">
                 {product.description}
               </p>
               <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-800">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>{product.availability} • Cleansed & Energized</span>
               </div>
             </div>
           </div>
 
           {/* Enquire on WhatsApp button */}
-          <div className="pt-6 border-t border-secondaryPurple/25 space-y-2 mt-4">
+          <div className="pt-4 sm:pt-6 border-t border-secondaryPurple/25 space-y-2 mt-4">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-3.5 sm:py-4 min-h-[48px] rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1db954] text-white text-xs uppercase font-semibold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-4 h-4 fill-current" />
+              <MessageCircle className="w-4 h-4 fill-current shrink-0" />
               <span>Order on WhatsApp</span>
             </a>
 

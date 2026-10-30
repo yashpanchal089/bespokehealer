@@ -47,30 +47,30 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookClick }) =
   ];
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden bg-softCream/60 border-t border-secondaryPurple/30">
+    <section id="pricing" className="py-16 sm:py-24 relative overflow-hidden bg-softCream/60 border-t border-secondaryPurple/30">
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full lavender-glow pointer-events-none filter blur-3xl opacity-40" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16">
+        <div className="flex flex-col items-center text-center space-y-3 mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
             <span>✦</span>
             <span>Sessions & Pricing</span>
           </div>
 
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal">
+          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal">
             A little clarity can go a long way.
           </h2>
 
-          <p className="text-sm sm:text-base text-brandLightText font-light max-w-lg">
+          <p className="text-xs sm:text-base text-brandLightText font-light max-w-lg">
             Honest, transparent guidance. No hidden fees or recurring commitments — just unhurried presence.
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-stretch max-w-4xl mx-auto">
           {pricingPlans.map((plan, idx) => (
             <motion.div
               key={plan.id}
@@ -78,9 +78,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookClick }) =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: idx * 0.15 }}
-              className={`relative rounded-3xl p-8 sm:p-10 flex flex-col justify-between transition-all duration-300 ${
+              className={`relative rounded-3xl p-6 sm:p-10 flex flex-col justify-between transition-all duration-300 ${
                 plan.featured
-                  ? 'bg-softCream border-2 border-secondaryPurple/70 shadow-2xl scale-[1.02]'
+                  ? 'bg-softCream border-2 border-secondaryPurple/70 shadow-2xl md:scale-[1.02]'
                   : 'bg-warmBeige/70 border border-secondaryPurple/40 shadow-lg hover:shadow-xl'
               }`}
             >

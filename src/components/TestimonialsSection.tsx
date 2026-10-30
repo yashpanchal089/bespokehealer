@@ -148,7 +148,7 @@ export const TestimonialsSection: React.FC = () => {
       return (
         <div
           key={cardKey}
-          className="w-[300px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl overflow-hidden bg-black/90 border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col"
+          className="w-[270px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl overflow-hidden bg-black/90 border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col"
         >
           <VideoFeedbackMedia
             videoUrl={item.videoUrl}
@@ -169,7 +169,7 @@ export const TestimonialsSection: React.FC = () => {
       return (
         <div
           key={cardKey}
-          className="w-[300px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl overflow-hidden bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer"
+          className="w-[270px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl overflow-hidden bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col group cursor-pointer"
         >
           <div className="relative aspect-[9/15] sm:aspect-[9/16] w-full h-full overflow-hidden bg-softCream">
             <img
@@ -187,7 +187,7 @@ export const TestimonialsSection: React.FC = () => {
     return (
       <div
         key={cardKey}
-        className="w-[300px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl p-6 sm:p-7 bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+        className="w-[270px] sm:w-[340px] md:w-[360px] flex-shrink-0 rounded-3xl p-5 sm:p-7 bg-softCream border border-secondaryPurple/40 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
       >
         <div>
           {/* Rating Stars & Quote Icon */}
@@ -207,7 +207,7 @@ export const TestimonialsSection: React.FC = () => {
 
           {/* Testimonial Quote */}
           {item.quote && (
-            <p className="font-editorial text-brandText font-light leading-relaxed mb-6 text-lg sm:text-xl">
+            <p className="font-editorial text-brandText font-light leading-relaxed mb-6 text-base sm:text-xl">
               "{item.quote}"
             </p>
           )}
@@ -216,15 +216,15 @@ export const TestimonialsSection: React.FC = () => {
         {/* Client Info Footer */}
         <div className="pt-4 border-t border-secondaryPurple/25 flex items-center justify-between gap-2 mt-auto">
           <div className="min-w-0">
-            <h3 className="text-sm font-semibold text-brandText truncate">
+            <h3 className="text-xs sm:text-sm font-semibold text-brandText truncate">
               {item.clientName}
             </h3>
-            <p className="text-xs text-brandLightText truncate">
+            <p className="text-[11px] sm:text-xs text-brandLightText truncate">
               {item.location} • {item.service}
             </p>
           </div>
 
-          <span className="text-[10px] uppercase tracking-wider text-brandLightText bg-warmBeige px-2.5 py-1 rounded-full border border-secondaryPurple/30 font-medium whitespace-nowrap shrink-0">
+          <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-brandLightText bg-warmBeige px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-secondaryPurple/30 font-medium whitespace-nowrap shrink-0">
             {item.durationTogether}
           </span>
         </div>
@@ -233,17 +233,17 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-softCream/40 border-t border-secondaryPurple/30">
+    <section id="testimonials" className="py-16 sm:py-24 relative overflow-hidden bg-softCream/40 border-t border-secondaryPurple/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-8 sm:mb-16">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
               <span>✦</span>
               <span>Living Sanctuary Stories</span>
             </div>
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal">
+            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal">
               1,000+ journeys. Countless stories.
             </h2>
           </div>

@@ -41,37 +41,34 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
       : filteredProducts.slice(0, 4);
 
   return (
-    <section id="shop" className="py-24 relative overflow-hidden bg-grain">
+    <section id="shop" className="py-16 sm:py-24 relative overflow-hidden bg-grain">
       {/* Background Glow */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full lavender-glow pointer-events-none filter blur-3xl opacity-35" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-12">
+        <div className="flex flex-col items-center text-center space-y-3 mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
             <span>✦</span>
             <span>Spiritual Boutique</span>
           </div>
 
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal">
+          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal">
             Take the energy home.
           </h2>
 
-          <p className="text-sm sm:text-base text-brandLightText font-light max-w-md">
-            Curated spiritual & self-care essentials, blessed and hand-energized.
-          </p>
         </div>
 
-        {/* Dynamic Category Filter Pills */}
-        <div className="flex items-center justify-center flex-wrap gap-2.5 mb-14">
+        {/* Dynamic Category Filter Pills — Smooth native-feeling horizontal scroll on mobile, flex-wrap on desktop */}
+        <div className="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar sm:flex-wrap gap-2 sm:gap-2.5 pb-2 sm:pb-0 mb-10 sm:mb-14 -mx-4 px-4 sm:mx-0 sm:px-0">
           {productCategories.map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-5 py-2 rounded-full text-xs font-medium tracking-wider uppercase transition-all duration-300 ${
+                className={`px-4 py-2 sm:px-5 sm:py-2 rounded-full text-[11px] sm:text-xs font-medium tracking-wider uppercase whitespace-nowrap shrink-0 transition-all duration-300 active:scale-95 ${
                   isSelected
                     ? 'bg-mutedPurple text-white shadow-md'
                     : 'bg-softCream/80 text-brandLightText hover:text-brandText hover:bg-lightLavender/70 border border-secondaryPurple/30'
@@ -84,7 +81,7 @@ export const ShopSection: React.FC<ShopSectionProps> = ({ isFullCatalogPage = fa
         </div>
 
         {/* Product Cards Grid: Luxury Spiritual Boutique */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-8 max-w-sm sm:max-w-none mx-auto">
           {displayedProducts.map((product, idx) => (
             <motion.div
               key={product.id}

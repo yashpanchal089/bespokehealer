@@ -12,14 +12,14 @@ export const FloatingActions: React.FC = () => {
     <>
       {/* LEFT BOTTOM: Floating Call Button */}
       <div
-        className="fixed bottom-6 left-6 z-40 flex items-center"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-40 flex items-center"
         onMouseEnter={() => setHoverLeft(true)}
         onMouseLeave={() => setHoverLeft(false)}
       >
         <a
           href={`tel:${cleanPhone}`}
           aria-label="Call Dr. Srushti Garg"
-          className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#FBF8F3] border border-secondaryPurple/50 text-brandText shadow-lg hover:shadow-xl hover:bg-lightLavender hover:scale-105 active:scale-95 transition-all duration-300 group"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FBF8F3] border border-secondaryPurple/50 text-brandText shadow-lg hover:shadow-xl hover:bg-lightLavender active:scale-90 sm:hover:scale-105 transition-all duration-300 group"
         >
           <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-mutedPurple group-hover:scale-110 transition-transform" />
           <span className="absolute -top-1 -right-1 flex h-3 w-3">
@@ -40,7 +40,7 @@ export const FloatingActions: React.FC = () => {
 
       {/* RIGHT BOTTOM: Floating WhatsApp Button */}
       <div
-        className="fixed bottom-6 right-6 z-40 flex items-center flex-row-reverse"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center flex-row-reverse"
         onMouseEnter={() => setHoverRight(true)}
         onMouseLeave={() => setHoverRight(false)}
       >
@@ -49,7 +49,7 @@ export const FloatingActions: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp Dr. Srushti Garg"
-          className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:shadow-2xl active:scale-90 sm:hover:scale-105 transition-all duration-300 group"
         >
           <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-current group-hover:scale-110 transition-transform" />
           <span className="absolute -top-1 -left-1 flex h-3.5 w-3.5">

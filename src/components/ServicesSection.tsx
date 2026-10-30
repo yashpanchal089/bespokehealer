@@ -10,32 +10,29 @@ interface ServicesSectionProps {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick }) => {
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-softCream/40">
+    <section id="services" className="py-16 sm:py-24 relative overflow-hidden bg-softCream/40">
       {/* Background Glow */}
       <div className="absolute top-1/3 right-10 w-96 h-96 rounded-full lavender-glow pointer-events-none filter blur-3xl opacity-40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center space-y-3 mb-16">
+        <div className="flex flex-col items-center text-center space-y-3 mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-warmBeige/90 border border-secondaryPurple/30 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple shadow-sm">
             <span>✦</span>
             <span>3 Core Services</span>
             <span>✦</span>
           </div>
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal">
+          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal">
             What do you need today?
           </h2>
-          <p className="font-editorial text-xl sm:text-2xl text-mutedPurple font-normal tracking-wide">
+          <p className="font-editorial text-lg sm:text-2xl text-mutedPurple font-normal tracking-wide">
             Tarot • Healing • Crystals
-          </p>
-          <p className="text-sm sm:text-base text-brandLightText font-light max-w-lg">
-            
           </p>
         </div>
 
         {/* 3 Equal Big Rectangle Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 items-stretch max-w-sm md:max-w-none mx-auto">
           {servicesData.map((service, index) => {
             return (
               <motion.div
@@ -49,7 +46,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onBookClick })
                 {/* Full, Crisp Image without white effect */}
                 <Link
                   to={`/services/${service.slug}`}
-                  className="relative h-80 sm:h-96 lg:h-[460px] w-full overflow-hidden block cursor-pointer bg-warmBeige/20"
+                  className="relative h-64 sm:h-96 lg:h-[460px] w-full overflow-hidden block cursor-pointer bg-warmBeige/20"
                 >
                   <img
                     src={service.image}

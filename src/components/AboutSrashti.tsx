@@ -10,12 +10,12 @@ interface AboutSrashtiProps {
 
 export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
   return (
-    <section id="about" className="py-20 lg:py-28 relative overflow-hidden bg-grain">
+    <section id="about" className="py-16 sm:py-20 lg:py-28 relative overflow-hidden bg-grain">
       {/* Background lavender wash */}
       <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full lavender-glow pointer-events-none filter blur-3xl opacity-50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* LEFT: One Beautiful Imagery with editorial frame */}
           <motion.div
@@ -23,7 +23,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 relative max-w-[320px] sm:max-w-md mx-auto lg:mx-0 w-full"
           >
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-xl border border-secondaryPurple/40 bg-softCream">
               <img
@@ -34,16 +34,16 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-warmBeige/80 via-transparent to-transparent pointer-events-none" />
               
               {/* Subtle quote overlay */}
-              <div className="absolute bottom-5 left-5 right-5 glass-card p-4 rounded-2xl border border-white/70">
-                <p className="font-editorial italic text-sm text-brandText leading-snug">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 glass-card p-3 sm:p-4 rounded-2xl border border-white/70">
+                <p className="font-editorial italic text-xs sm:text-sm text-brandText leading-snug">
                   "Let go. Learn to forgive &amp; forget. Let go &amp; go on living"
                 </p>
               </div>
             </div>
 
             {/* Decorative celestial badge */}
-            <div className="absolute -top-4 -right-4 w-14 h-14 rounded-full bg-lightLavender border border-secondaryPurple/50 shadow-md flex items-center justify-center text-mutedPurple">
-              <Sparkles className="w-6 h-6 animate-pulseSlow" />
+            <div className="absolute -top-3 right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-lightLavender border border-secondaryPurple/50 shadow-md flex items-center justify-center text-mutedPurple">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 animate-pulseSlow" />
             </div>
           </motion.div>
 
@@ -53,7 +53,7 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-7 flex flex-col items-start space-y-6"
+            className="lg:col-span-7 flex flex-col items-start space-y-5 sm:space-y-6"
           >
             {/* Small Label */}
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
@@ -62,12 +62,12 @@ export const AboutSrashti: React.FC<AboutSrashtiProps> = () => {
             </div>
 
             {/* Large Heading */}
-            <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal leading-tight">
+            <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal leading-tight">
               {siteConfig.founderName}
             </h2>
 
             {/* Introduction Quote */}
-            <p className="font-editorial text-2xl sm:text-3xl text-brandText/90 font-light leading-relaxed max-w-xl">
+            <p className="font-editorial text-xl sm:text-3xl text-brandText/90 font-light leading-relaxed max-w-xl">
               "Creating a personal space for healing, clarity and meaningful spiritual guidance."
             </p>
 

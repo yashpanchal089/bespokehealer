@@ -43,16 +43,16 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12 sm:space-y-16">
 
         {/* ================= 1. Top Navigation & Return Link ================= */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-4 border-b border-secondaryPurple/20 pb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2 sm:pt-4 border-b border-secondaryPurple/20 pb-4 sm:pb-6">
           <Link
             to="/#services"
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-mutedPurple hover:text-brandText transition-colors group"
+            className="inline-flex items-center gap-2 py-1.5 text-xs font-semibold uppercase tracking-wider text-mutedPurple hover:text-brandText active:scale-95 transition-all min-h-[44px] group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span>Return to Sanctuary</span>
           </Link>
 
-          <div className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-mutedPurple bg-warmBeige/80 px-3.5 py-1 rounded-full border border-secondaryPurple/30 self-start sm:self-auto">
+          <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.25em] text-mutedPurple bg-warmBeige/80 px-3.5 py-1 rounded-full border border-secondaryPurple/30 self-start sm:self-auto">
             <span>✦</span>
             <span>Personal 1-on-1 Sanctuary</span>
             <span>✦</span>
@@ -60,35 +60,35 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
         </div>
 
         {/* ================= 2. Editorial Header & 3 Services Switcher Tabs ================= */}
-        <div className="text-center space-y-5 max-w-3xl mx-auto">
+        <div className="text-center space-y-4 sm:space-y-5 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-mutedPurple">
             <span>✦ Sacred Offerings ✦</span>
           </div>
 
-          <h1 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal leading-tight">
+          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal leading-tight">
             {currentService.name}
           </h1>
 
           {(currentService.subtitle || currentService.shortDescription) && (
-            <p className="font-editorial text-xl sm:text-2xl text-mutedPurple italic font-normal">
+            <p className="font-editorial text-lg sm:text-2xl text-mutedPurple italic font-normal">
               {currentService.subtitle || currentService.shortDescription}
             </p>
           )}
 
-          <p className="text-sm sm:text-base text-brandLightText font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base text-brandLightText font-light leading-relaxed max-w-2xl mx-auto">
             {currentService.tagline || currentService.description}
           </p>
 
-          {/* 3 Core Services Switcher Pills */}
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          {/* 3 Core Services Switcher Pills — Smooth horizontal swipe on mobile, flex-wrap on desktop */}
+          <div className="pt-2 sm:pt-4 flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar sm:flex-wrap gap-2 sm:gap-3 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {servicesData.map((service) => {
               const isActive = service.id === currentService.id;
               return (
                 <button
                   key={service.id}
                   onClick={() => handleSelectService(service)}
-                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
-                      ? 'bg-brandText text-white shadow-md scale-105'
+                  className={`inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-300 active:scale-95 ${isActive
+                      ? 'bg-brandText text-white shadow-md scale-102'
                       : 'bg-softCream text-brandText border border-secondaryPurple/40 hover:bg-lightLavender hover:border-mutedPurple'
                     }`}
                 >
@@ -101,7 +101,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
         </div>
 
         {/* ================= 3. Main Showcase Spotlight Card (Two Columns) ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start bg-softCream/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-10 border border-secondaryPurple/30 shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-start bg-softCream/80 backdrop-blur-sm rounded-3xl p-5 sm:p-8 lg:p-10 border border-secondaryPurple/30 shadow-xl">
 
           {/* Left Column: Visual & Quick Booking Hub */}
           <div className="lg:col-span-5 space-y-6">
@@ -345,23 +345,23 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
 
         {/* ================= 8. Bottom Elegant Booking Banner (Tarot & Energy Healing) ================= */}
         {!isCrystals && (
-          <div className="rounded-3xl p-8 sm:p-12 text-center bg-gradient-to-br from-softCream via-lightLavender/40 to-warmBeige border border-secondaryPurple/40 shadow-xl space-y-6">
+          <div className="rounded-3xl p-6 sm:p-12 text-center bg-gradient-to-br from-softCream via-lightLavender/40 to-warmBeige border border-secondaryPurple/40 shadow-xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
               <span>✦ Begin Your Transformation ✦</span>
             </div>
 
-            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-brandText font-normal">
+            <h2 className="font-editorial text-2xl sm:text-4xl lg:text-5xl text-brandText font-normal leading-tight">
               Ready to book your {currentService.name}?
             </h2>
 
-            <p className="text-sm sm:text-base text-brandLightText font-light max-w-xl mx-auto leading-relaxed">
+            <p className="text-xs sm:text-base text-brandLightText font-light max-w-xl mx-auto leading-relaxed">
               Reserve your confidential session with {siteConfig.founderName}. Connect online from anywhere in the world, or inquire for private in-person slots.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
               <button
                 onClick={onBookClick}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brandText hover:bg-mutedPurple text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-brandText hover:bg-mutedPurple text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl active:scale-95 min-h-[48px]"
               >
                 <Sparkles className="w-4 h-4 text-secondaryPurple" />
                 <span>Book Session ({currentService.price})</span>
@@ -371,7 +371,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ onBookClic
                 href={getServiceWhatsAppUrl(currentService.name)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-105"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl active:scale-95 min-h-[48px]"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Direct WhatsApp Slot</span>

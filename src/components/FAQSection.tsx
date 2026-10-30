@@ -29,10 +29,10 @@ export const FAQSection: React.FC = () => {
       >
         <button
           onClick={() => toggle(faq.id)}
-          className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-3 focus:outline-none cursor-pointer group min-h-[72px]"
+          className="w-full p-3.5 sm:p-5 text-left flex items-center justify-between gap-3 focus:outline-none cursor-pointer group min-h-[58px] sm:min-h-[72px]"
           aria-expanded={isOpen}
         >
-          <span className="font-editorial text-base sm:text-lg text-brandText font-medium group-hover:text-mutedPurple transition-colors leading-snug">
+          <span className="font-editorial text-sm sm:text-lg text-brandText font-medium group-hover:text-mutedPurple transition-colors leading-snug">
             {faq.question}
           </span>
           <div
@@ -55,7 +55,7 @@ export const FAQSection: React.FC = () => {
               transition={{ duration: 0.25 }}
               className="overflow-hidden"
             >
-              <div className="px-4 sm:px-5 pb-5 pt-1 text-xs sm:text-sm text-brandLightText font-light leading-relaxed border-t border-secondaryPurple/15">
+              <div className="px-3.5 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-brandLightText font-light leading-relaxed border-t border-secondaryPurple/15">
                 {faq.answer}
               </div>
             </motion.div>
@@ -66,25 +66,25 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 relative overflow-hidden bg-softCream/40 border-t border-secondaryPurple/30">
+    <section id="faq" className="py-16 sm:py-24 relative overflow-hidden bg-softCream/40 border-t border-secondaryPurple/30">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full lavender-glow pointer-events-none filter blur-3xl opacity-25" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 sm:space-y-12">
         
         {/* Header */}
-        <div className="flex flex-col items-center text-center space-y-3.5 max-w-xl mx-auto">
+        <div className="flex flex-col items-center text-center space-y-3 max-w-xl mx-auto">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-mutedPurple">
             <span>✦</span>
             <span>Clarity &amp; Answers</span>
             <span>✦</span>
           </div>
 
-          <h2 className="font-editorial text-4xl sm:text-5xl lg:text-6xl text-brandText font-normal">
+          <h2 className="font-editorial text-3xl sm:text-5xl lg:text-6xl text-brandText font-normal">
             Frequently Asked
           </h2>
 
-          <p className="text-sm sm:text-base text-brandLightText font-light">
+          <p className="text-xs sm:text-base text-brandLightText font-light">
             Everything you need to know about personal sessions, energy healing, and consecrated crystal boutique orders.
           </p>
         </div>

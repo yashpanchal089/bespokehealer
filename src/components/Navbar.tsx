@@ -136,20 +136,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="p-2 rounded-full bg-gradient-to-r from-[#f09433]/20 via-[#dc2743]/20 to-[#bc1888]/20 text-[#c13584] border border-[#dc2743]/30"
+              className="p-2.5 min-w-[42px] min-h-[42px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#f09433]/20 via-[#dc2743]/20 to-[#bc1888]/20 text-[#c13584] border border-[#dc2743]/30 active:scale-95 transition-transform"
             >
               <InstagramIcon className="w-4 h-4" />
             </a>
 
             <button
               onClick={onBookClick}
-              className="px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-[#2B1F27] text-white shadow-xs"
+              className="px-4 py-2 min-h-[42px] rounded-full text-xs font-semibold uppercase tracking-wider bg-[#2B1F27] active:bg-[#43313D] text-white shadow-xs active:scale-95 transition-all"
             >
               Book
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-brandText hover:bg-lightLavender/40 transition-colors"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-brandText hover:bg-lightLavender/40 active:bg-lightLavender/60 transition-colors"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -160,8 +160,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
 
       {/* ================= MOBILE DRAWER MENU ================= */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-warmBeige/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col justify-between pb-10 animate-fadeIn">
-          <nav className="flex flex-col space-y-4 text-center">
+        <div className="fixed inset-0 z-40 bg-warmBeige/98 backdrop-blur-2xl md:hidden pt-24 px-6 flex flex-col justify-between pb-8 overflow-y-auto h-[100dvh] animate-fadeIn">
+          <nav className="flex flex-col space-y-3.5 text-center my-auto py-4">
             {navLinks.map((link) => {
               const isAnchor = link.href.startsWith('/#');
               const targetHref = isAnchor && location.pathname === '/' ? link.href.replace('/', '') : link.href;
@@ -170,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                   key={link.label}
                   href={targetHref}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-editorial text-2xl text-brandText hover:text-mutedPurple transition-colors py-1"
+                  className="font-editorial text-2xl text-brandText hover:text-mutedPurple active:scale-95 transition-all py-2 min-h-[44px] flex items-center justify-center"
                 >
                   {link.label}
                 </a>
@@ -178,13 +178,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
             })}
           </nav>
 
-          <div className="pt-6 border-t border-secondaryPurple/30 flex flex-col items-center gap-4">
+          <div className="pt-4 border-t border-secondaryPurple/30 flex flex-col items-center gap-3.5 shrink-0">
             <div className="grid grid-cols-2 gap-3 w-full max-w-xs">
               <a
                 href={siteConfig.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-xs font-semibold shadow-md"
+                className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-xs font-semibold shadow-md active:scale-95 transition-transform"
               >
                 <InstagramIcon className="w-4 h-4" />
                 <span>Instagram</span>
@@ -194,7 +194,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                 href={siteConfig.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-full bg-[#1877F2] text-white text-xs font-semibold shadow-md"
+                className="flex items-center justify-center gap-2 py-3 px-3 min-h-[44px] rounded-full bg-[#1877F2] text-white text-xs font-semibold shadow-md active:scale-95 transition-transform"
               >
                 <FacebookIcon className="w-4 h-4" />
                 <span>Facebook</span>
@@ -206,9 +206,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                 setMobileMenuOpen(false);
                 onBookClick();
               }}
-              className="w-full py-3.5 rounded-full bg-[#2B1F27] text-white font-medium text-sm tracking-wider uppercase shadow-md"
+              className="w-full py-4 min-h-[48px] rounded-full bg-[#2B1F27] active:bg-[#43313D] text-white font-medium text-xs tracking-wider uppercase shadow-md active:scale-95 transition-all flex items-center justify-center gap-2"
             >
-              Book a 60-Minute Session
+              <Sparkles className="w-4 h-4 text-[#E7DCEF]" />
+              <span>Book a 60-Minute Session</span>
             </button>
           </div>
         </div>
